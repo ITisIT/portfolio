@@ -1,0 +1,396 @@
+@charset "utf-8";
+
+#contents .desc {
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 2;
+    color: #000;
+}
+
+/* top */
+#top .topBg {
+    width: 1920px;
+    height: 1080px;
+    background: url("../images/top_bg.png") no-repeat center center;
+    background-size: contain;
+}
+
+#top .inner {
+    height: 1080px;
+    position: relative;
+}
+
+#top .topDesc {
+    position: absolute;
+    left: 1150px;
+    top: 320px;
+}
+
+#top .topDesc dl dt {
+    font-size: 24px;
+    font-weight: 600;
+    color: #000;
+}
+
+#top .topDesc dl dd {
+    padding-bottom: 50PX;
+    font-size: 36px;
+    font-weight: 900;
+    color: #000;
+}
+
+#top .topDesc h1 img {
+    width: 210px;
+    height: 91px;
+}
+
+#top .designBy .b1 {
+    font-size: 30px;
+    font-weight: 400;
+    color: #333;
+    position: absolute;
+    left: 270px;
+    top: 900px;
+}
+
+#top .designBy .b2 {
+    font-size: 30px;
+    font-weight: 400;
+    color: #333;
+    position: absolute;
+    left: 770px;
+    top: 900px;
+}
+
+#top .designBy .b3 {
+    position: absolute;
+    left: 1370px;
+    top: 880px;
+}
+
+#top .designBy .b3 img:nth-child(2) {
+    padding-left: 10px;
+}
+
+#top .designBy .b3 img:nth-child(3) {
+    padding-left: 10px;
+}
+
+/* concept */
+#concept {
+    padding: 148px 0px;
+    max-width: 1920px;
+    height: 3587px;
+    background: #ddd;
+}
+
+#contents h1 {
+    padding-bottom: 100px;
+    font-size: 60px;
+    font-weight: 600;
+    color: #000;
+    position: relative;
+}
+
+#concept h1::before {
+    content: "";
+    width: 347px;
+    height: 36px;
+    background: #8784d9;
+    position: absolute;
+    left: 0px;
+    top: 50px;
+    opacity: 0.3;
+}
+
+#concept .overview {
+    padding-bottom: 200px;
+}
+
+#concept .overview .desc {
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 2;
+    color: #000;
+}
+
+#contents h2 {
+    padding-bottom: 70px;
+    font-size: 48px;
+    font-weight: 600;
+    color: #000;
+    position: relative;
+}
+
+#concept h2::before {
+    content: "";
+    width: 280px;
+    height: 16px;
+    background: #8784d9;
+    position: absolute;
+    left: 0px;
+    top: 35px;
+    opacity: 0.3;
+}
+
+#concept .moodBoard {
+    padding-bottom: 200px;
+}
+
+#concept .moodBoard ul {
+    width: 1200px;
+    height: 277px;
+}
+
+#concept .moodBoard ul li {
+    margin-right: 22px;
+    width: calc((100% - 66px) / 3);
+    float: left;
+}
+
+#concept .moodBoard ul li:nth-child(3) {
+    margin-right: 0px;
+}
+
+#concept .moodBoard ul li img {
+    width: 378px;
+    height: 234px;
+}
+
+#concept .moodBoard ul li p {
+    padding-top: 15px;
+    font-size: 30px;
+    font-weight: 400;
+    color: #000;
+    text-align: center;
+}
+
+#concept .logo {
+    padding-bottom: 200px;
+}
+
+#concept .logo .logoDesc {
+    padding: 0px 280px 85px;
+}
+
+#concept .fonts {
+    padding-bottom: 200px;
+}
+
+#concept .fonts .f1 {
+    padding-bottom: 40px;
+    font-size: 48px;
+    font-weight: 900;
+    color: #000;
+}
+
+#concept .fonts .f2 {
+    padding-bottom: 40px;
+    font-size: 48px;
+    font-weight: 600;
+    color: #000;
+}
+
+#concept .fonts .f3 {
+    font-size: 48px;
+    font-weight: 400;
+    color: #000;
+}
+
+#concept .colorCode .ccode {}
+
+/* s3 */
+#s3 {
+    width: 1920px;
+    height: 5950px;
+    background: url("../images/s3_bg.png") no-repeat center center;
+}
+
+/* wireframe */
+#wireframe {
+    width: 1920px;
+    height: 1912px;
+}
+
+#wireframe .inner {
+    padding: 148px 0px;
+}
+
+#wireframe h1 {
+    padding-bottom: 100px;
+    font-size: 60px;
+    font-weight: 600;
+    color: #000;
+    position: relative;
+}
+
+#wireframe h1::before {
+    content: "";
+    width: 435px;
+    height: 36px;
+    background: #8784d9;
+    position: absolute;
+    left: 0px;
+    top: 50px;
+    opacity: 0.3;
+}
+
+#wireframe p {
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 2;
+    color: #000;
+}
+
+#wireframe ul {
+    width: 1200px;
+}
+
+#wireframe ul li {
+    width: calc((100% - 100px) / 2);
+    float: left;
+}
+
+#wireframe ul li:nth-child(1) img {
+    padding-top: 170px;
+    width: 520px;
+    height: 100%;
+}
+
+#wireframe ul li:nth-child(2) img {
+    width: 520px;
+    height: 100%;
+    border: 0.5px solid #ddd;
+}
+
+/* mainPage */
+#mainPage {
+    width: 1920px;
+}
+
+#mainPage .inner {
+    height: 1951px;
+}
+
+#mainPage h1 {
+    padding-bottom: 100px;
+    font-size: 60px;
+    font-weight: 600;
+    color: #000;
+    position: relative;
+}
+
+#mainPage h1::before {
+    content: "";
+    width: 250px;
+    height: 36px;
+    background: #8784d9;
+    position: absolute;
+    left: 0px;
+    top: 50px;
+    opacity: 0.3;
+}
+
+/* #mainPage .mainImg {
+    margin-top: -100px;
+} */
+
+#mainPage ul {
+    width: 1200px;
+}
+
+#mainPage ul li {
+    width: calc(100% / 2);
+    float: left;
+}
+
+#mainPage ul li:nth-child(1) img{
+    margin-top: 63px;
+}
+
+#mainPage ul li:nth-child(2) img{
+    margin-left: -430px;
+    margin-top: -100px;
+}
+
+/* subPage */
+#subPage {
+    width: 1920px;
+}
+
+/* #subPage .inner {
+    height: 2183px;
+} */
+
+#subPage h1 {
+    padding-bottom: 100px;
+    font-size: 60px;
+    font-weight: 600;
+    color: #000;
+    position: relative;
+}
+
+#subPage h1::before {
+    content: "";
+    width: 250px;
+    height: 36px;
+    background: #8784d9;
+    position: absolute;
+    left: 0px;
+    top: 50px;
+    opacity: 0.3;
+}
+
+#subPage ul {
+    width: 1200px;
+}
+
+#subPage ul li {
+    width: calc(100% / 2);
+    float: left;
+}
+
+#subPage ul li:nth-child(1) img{
+    margin-top: 63px;
+}
+
+#subPage ul li:nth-child(2) img{
+    margin-left: -360px;
+    margin-top: -97px;
+}
+
+/* mockup */
+#mockup {
+    width: 1920px;
+    height: 1707px;
+    background: url("../images/mockup_bg.png") no-repeat center center;
+}
+
+#mockup h1 {
+    padding-bottom: 100px;
+    font-size: 60px;
+    font-weight: 600;
+    color: #000;
+    position: relative;
+}
+
+#mockup h1::before {
+    content: "";
+    width: 370px;
+    height: 36px;
+    background: #8784d9;
+    position: absolute;
+    left: 0px;
+    top: 50px;
+    opacity: 0.3;
+}
+
+#mockup .mu {
+    margin-left: -430px;
+    width: 1800px;
+}
+
+#mockup .mu img {
+    width: 100%;
+    height: 100%;
+}
