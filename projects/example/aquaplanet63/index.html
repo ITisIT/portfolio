@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포트폴리오용 아쿠아플라넷63</title>
+
+    <link rel="stylesheet" href="./css/common.css" type="text/css">
+    <link rel="stylesheet" href="./css/fullpage.css" type="text/css">
+    <link rel="stylesheet" href="./css/ani.css" type="text/css">
+    <link rel="stylesheet" href="./css/main.css" type="text/css">
+
+    <script src="./js/jquery-3.6.0.min.js" type="text/javascript"></script>
+    <script src="./js/fullpage.js" type="text/javascript"></script>
+    <script src="./js/main.js" type="text/javascript"></script>
+    <script>
+        $(document).ready(function () {
+            // fullpage
+            var myFullpage = new fullpage('#fullpage', {
+                menu: '#menu',
+                navigation: true,
+                navigationPosition: 'right',
+                navigationTooltips: ['아쿠아플라넷63', '프로그램', '이용안내', '혜택안내'],
+                anchors: ['menu1', 'menu2', 'menu3', 'menu4'],
+                sectionsColor: ['#C63D0F', '#1BBC9B', '#7E8F7C'],
+                autoScrolling: true,
+                licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE'
+            });
+        });
+    </script>
+
+</head>
+
+<body>
+    <header id="header">
+        <div class="inner">
+            <h1><a href="./index.html"><img src="./images/logo.png" alt="아쿠아플라넷63 로고 image"></a></h1>
+
+            <nav>
+                <ul class="gnb">
+                    <li><a href="#menu1">아쿠아플라넷63</a></li>
+                    <li><a href="#menu2">프로그램</a></li>
+                    <li><a href="#menu3">이용안내</a></li>
+                    <li><a href="#menu4">혜택안내</a></li>
+                </ul>
+            </nav>
+
+            <ul class="util">
+                <li><a href="#">Login</a></li>
+                <li><a href="#">Ticket</a></li>
+                <li><a href="#">EN</a></li>
+            </ul>
+        </div> <!-- inner end -->
+    </header> <!-- header end -->
+
+    <div id="fullpage">
+        <div id="mainVisual" class="section" data-anchor="menu1">
+            <video src="./images/63_main_video.mp4" muted data-autoplay loop></video>
+
+            <h2>
+                서울 10대 명소로 선정된 63빌딩<br>
+                <span>동화 속 인어공주를 만나보세요</span>
+            </h2>
+        </div> <!-- mainVisual end -->
+
+        <div id="program" class="section" data-anchor="menu2">
+            <div class="inner">
+                <div class="programTitle">
+                    <h2>Program</h2>
+                    <p class="comment">
+                        인어가 사는 곳, 도심 속 오아시스63
+                    </p>
+                </div> <!-- programTitle end -->
+
+                <div class="programList">
+                    <ul>
+                        <li>
+                            <dl>
+                                <dt>생태설명회</dt>
+                                <dd>
+                                    아쿠아플라넷63의 다양한<br>
+                                    생태설명회를 만나보세요.
+                                </dd>
+                                <dd><a href="#">자세히보기</a></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>공연프로그램</dt>
+                                <dd>
+                                    아쿠아플라넷63의 다양한<br>
+                                    생태설명회를 만나보세요.
+                                </dd>
+                                <dd><a href="#">자세히보기</a></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>피딩프로그램</dt>
+                                <dd>
+                                    아쿠아플라넷63의 다양한<br>
+                                    생태설명회를 만나보세요.
+                                </dd>
+                                <dd><a href="#">자세히보기</a></dd>
+                            </dl>
+                        </li>
+                    </ul>
+                </div> <!-- programList end -->
+            </div> <!-- inner end -->
+        </div> <!-- program end -->
+
+        <div id="info" class="section" data-anchor="menu3">
+            <div class="inner">
+                <div class="infoTitle">
+                    <h2>Information</h2>
+
+                    <p class="comment">
+                        아쿠아플라넷63을 제대로 즐기는 방법!
+                    </p>
+                </div> <!-- infoTitle end -->
+
+                <div class="infoList">
+                    <div class="time">
+                        <h3>운영시간</h3>
+
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th>연중무휴</th>
+                                    <td>10:00 - 19:00</td>
+                                </tr>
+
+                                <tr>
+                                    <th>매표마감</th>
+                                    <td>18:30</td>
+                                </tr>
+
+                                <tr>
+                                    <td colspan="2">※ 공연 시간은 내부 사정에 의해 변동될 수 있습니다.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p class="detail"><a href="#">자세히보기</a></p>
+                    </div> <!-- time end -->
+
+                    <div class="money">
+                        <h3>이용요금</h3>
+
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th>성인</th>
+                                    <td>27,000원</td>
+                                </tr>
+
+                                <tr>
+                                    <th>청소년</th>
+                                    <td>23,000원</td>
+                                </tr>
+
+                                <tr>
+                                    <th>어린이</th>
+                                    <td>23,000원</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p class="buy"><a href="#">티켓구매</a></p>
+                    </div> <!-- money end -->
+                </div> <!-- infoList end -->
+            </div> <!-- inner end -->
+        </div> <!-- info end -->
+
+        <div id="event" class="section" data-anchor="menu4">
+            <div class="inner">
+                <h2>Event</h2>
+
+                <ul>
+                    <li>
+                        <h3>이벤트</h3>
+                        <p class="desc">
+                            특별 이벤트와<br>
+                            통합 이벤트를 만나보세요!
+                        </p>
+                        <p class="detail"><a href="#">자세히보기</a></p>
+                    </li>
+
+                    <li>
+                        <h3>이벤트</h3>
+                        <p class="desc">
+                            특별 이벤트와<br>
+                            통합 이벤트를 만나보세요!
+                        </p>
+                        <p class="detail"><a href="#">자세히보기</a></p>
+                    </li>
+
+                    <li>
+                        <h3>이벤트</h3>
+                        <p class="desc">
+                            특별 이벤트와<br>
+                            통합 이벤트를 만나보세요!
+                        </p>
+                        <p class="detail"><a href="#">자세히보기</a></p>
+                    </li>
+                </ul>
+            </div> <!-- inner end -->
+        </div> <!-- event end -->
+
+        <footer id="footer" class="section fp-auto-height">
+            <div class="inner">
+                <div class="footerTxt">
+                    <ul class="footerLink">
+                        <li><a href="#">이메일무단수집거부</a></li>
+                        <li><a href="#">개인정보처리방침</a></li>
+                        <li><a href="#">영상정보처리기기운영 처리방침</a></li>
+                        <li><a href="#">이용약관</a></li>
+                    </ul>
+
+                    <address>
+                        대표이사 김경수&nbsp;&nbsp;&nbsp; 대표전화 1833-7001&nbsp;&nbsp;&nbsp; 사업자등록번호
+                        624-81-02142&nbsp;&nbsp;&nbsp; 통신판매번호 2015-서울영등포-0907<br>
+                        서울시 영등포구 여의도동 60&nbsp;&nbsp;&nbsp; 서울특별시 영등포구 63로 36, 리버타워
+                    </address>
+
+                    <p class="copy">
+                        Copyright &copy; Aquaplanet Co., Ltd. All Rights Reserved.
+                    </p>
+                </div> <!-- footerTxt end -->
+
+                <ul class="sns">
+                    <li><a href="#"><img src="./images/icon_facebook.svg" alt="icon_facebook logo image"></a></li>
+                    <li><a href="#"><img src="./images/icon_instar.svg" alt="icon_insta logo image"></a></li>
+                    <li><a href="#"><img src="./images/icon_youtube.svg" alt="icon_youtube logo image"></a></li>
+                </ul>
+            </div> <!-- inner end -->
+        </footer> <!-- footer end -->
+    </div> <!-- fullpage end -->
+</body>
+
+</html>

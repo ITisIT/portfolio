@@ -1,0 +1,141 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>포트폴리오용 2018 월드한식페스티벌</title>
+    <link href="css/common.css" rel="stylesheet" type="text/css">
+    <link href="css/main.css" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(".depth2").hide();
+
+            $(".gnb > li").on("mouseenter", function() {
+                $(this).children(".depth2").fadeIn(200);  // 마우스 올린 요소에(this)
+            });
+
+            $(".gnb > li").on("mouseleave", function() {
+                $(this).children(".depth2").fadeOut(200);  // 마우스 올린 요소에(this)
+            });
+        });
+    </script>
+</head>
+
+
+<body>
+    <div id="wrap">
+
+        <header id="header">
+            <h1><a href="#"><img src="images/logo.png" alt="2018 WORLD HANSIK FESTIVAL"></a></h1>
+
+            <ul class="global">
+                <li><a href="#">English</a></li>
+                <li><a href="#">Chinese</a></li>
+                <li><a href="#">Japanese</a></li>
+            </ul>
+
+            <nav>
+                <ul class="gnb">
+                    <li><a href="#">축제소개</a>
+                        <ul class="depth2">
+                            <li><a href="#">인사말</a></li>
+                            <li><a href="#">개최개요</a></li>
+                            <li><a href="#">어워드</a></li>
+                            <li><a href="#">조직구성</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">일정안내</a>
+                        <ul class="depth2">
+                            <li><a href="#">공식일정안내</a></li>
+                            <li><a href="#">참가업체</a></li>
+                            <li><a href="#">부대시설안내</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">프로그램</a>
+                        <ul class="depth2">
+                            <li><a href="#">참가안내</a></li>
+                            <li><a href="#">공모전참여</a></li>
+                            <li><a href="#">쿠킹클래스</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">커뮤니티</a>
+                        <ul class="depth2">
+                            <li><a href="#">공지사항</a></li>
+                            <li><a href="#">행사사진</a></li>
+                            <li><a href="#">자료실</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <!--header-->
+
+
+
+        <article id="main_visual">
+            <img src="images/visual_txt.png" alt="2018 월드 한식 페스티벌 10월 4일부터 10월 5일까지 서울 코엑스(K팝 광장)">
+        </article>
+        <!--main_visual-->
+
+
+        <div id="contents">
+            <section id="main_banner" class="inner">
+                <h2 class="theme"><img src="images/theme.png" alt="일상 속 우리 한식, 식을 담아 내다."></h2>
+                <ul class="clearfix">
+                    <li><a href="#">행사일정</a></li>
+                    <li><a href="#">찾아오시는 길</a></li>
+                    <li><a href="#">한식 쿠킹쇼</a></li>
+                </ul>
+            </section>
+            <!--main_banner-->
+
+
+
+            <article id="hansik_logo"><img src="images/hansik_logo.png" alt="the taste of hansik"></article>
+            <section id="cooking">
+                <h2>월드한식페스티벌 주요행사</h2>
+                <ul class="cooking_list inner clearfix">
+                    <li>
+                        <a href="#">
+                            <img src="images/cooking1.jpg" alt="장만들기 체험사진">
+                            <p>명인과 함께하는 장 만들기 체험</p>
+                            <div class="detail"><span>자세히보기</span></div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="images/cooking2.jpg" alt="공모전 음식사진">
+                            <p>2018 월드 한식 페스티벌 공모전</p>
+                            <div class="detail"><span>자세히보기</span></div>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+            <!--cooking-->
+
+        </div>
+        <!--contents-->
+
+
+
+        <footer id="footer" class="inner">
+            <p class="footer_logo"><img src="images/foot_logo.png" alt="2018 WORLD HANSIK FESTIVAL"></p>
+
+            <address>2018 월드 한식 페스티벌 사무국 TEL : 02-550-2583 e-mail : hansikfestival@gmail.com</address>
+            <p class="copy">Copyright &copy; 2018 Korean Food Promotion Institute. All Rights Reserved.</p>
+
+            <ul class="sns">
+                <li><a href="#">facebook</a></li>
+                <li><a href="#">blog</a></li>
+                <li><a href="#">youtube</a></li>
+            </ul>
+        </footer>
+        <!--footer-->
+
+    </div>
+    <!--wrap-->
+
+</body>
+
+</html>

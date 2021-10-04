@@ -1,0 +1,821 @@
+@charset "uft-8";
+
+/* sitemap */
+#sitemap {
+    width: 100%;
+    height: 100%;
+    background: #67625e;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    z-index: 99999999;
+}
+
+#sitemap .sitemapTitle {
+    padding: 100px 0px 50px;
+    font-size: 100px;
+    font-weight: 600;
+    text-align: center;
+    color: #a89079;
+}
+
+#sitemap .mainMenu > li {
+    margin-left: 50px;
+    width: calc((100% - 150px) / 4);
+    float: left;
+}
+
+#sitemap .mainMenu > li:nth-child(1) {
+    margin-left: 0px;
+}
+
+#sitemap .mainMenu > li > a {
+    margin-bottom: 20px;
+    padding-bottom: 30px;
+    display: block;
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+    text-transform: capitalize;
+    color: #fff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+#sitemap .subMenu li a {
+    padding: 3px 0px;
+    display: block;
+    text-align: center;
+    text-transform: capitalize;
+    color: rgba(255, 255, 255, 0.3);
+    transition: color 0.3s;
+}
+
+#sitemap .subMenu li a:hover {
+    color: #ff0;
+}
+
+#sitemap .sitemapClose {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    cursor: pointer;
+}
+
+/* popup */
+.popup {
+    height: 50px;
+    text-align: center;
+    background: #a89079;
+    position: relative;
+}
+
+.popup a {
+    padding: 10px 0px;
+    display: block;
+    font-size: 20px;
+    color: #fff;
+}
+
+.popup .popupClose {
+    width: 30px;
+    height: 30px;
+    font-size: 0px;
+    background: url("../images/main/popup_close.png") no-repeat center center;
+    cursor: pointer;
+    /* 해당 요소에 마우스를 올리면 손가락 모양으로 바뀜 */
+    position: absolute;
+    right: 30px;
+    top: 10px;
+}
+
+/* header */
+#header .inner {
+    height: 110px;
+    position: relative;
+    z-index: 99999;
+}
+
+#header h1 {
+    position: absolute;
+    left: 0px;
+    top: 40px;
+}
+
+/* gnb */
+#header .gnb {
+    position: absolute;
+    left: 300px;
+    top: 40px;
+}
+
+#header .gnb > li {
+    float: left;
+}
+
+#header .gnb > li > a {
+    padding: 10px 40px 36px;
+    display: block;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+#header .gnb > li:hover > a {
+    color: #758246;
+}
+
+/* gnb > depth2 */
+#header .gnb > li:hover .depth2 {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+#header .depth2Bg {
+    width: 100%;
+    height: 180px;
+    background: #758246;
+    position: absolute;
+    left: 0px;
+    /* top: 160px; */
+    z-index: 99;
+}
+
+#header .depth2 {
+    padding-top: 20px;
+    height: 180px;
+    transition: background 0.5s;
+}
+
+#header .depth2 li a {
+    padding: 3px 0px;
+    display: block;
+    text-align: center;
+    color: #fff;
+    text-transform: capitalize;
+}
+
+#header .depth2 li a:hover {
+    color: #000;
+}
+
+/* member */
+#header .member {
+    position: absolute;
+    right: 100px;
+    top: 52px;
+}
+
+#header .member li {
+    padding-left: 20px;
+    float: left;
+}
+
+#header .member li a {
+    display: block;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #999;
+}
+
+#header .allMenu {
+    width: 20px;
+    height: 20px;
+    font-size: 0px;
+    background: url("../images/common/all_menu.png") no-repeat center center;
+    cursor: pointer;
+    position: absolute;
+    right: 40px;
+    top: 50px;
+}
+
+#header .search {
+    width: 20px;
+    height: 20px;
+    font-size: 0px;
+    background: url("../images/common/top_search.png") no-repeat center center;
+    cursor: pointer;
+    position: absolute;
+    right: 0px;
+    top: 50px;
+}
+
+/* mainBanner */
+#mainBanner {
+    height: 550px;
+    position: relative;
+}
+
+#mainBanner .mb li {
+    height: 550px;
+    text-align: center;
+}
+
+#mainBanner .mb li.mb1 {
+    background: url("../images/main/mv_01.jpg") no-repeat center top;
+}
+
+#mainBanner .mb li.mb2 {
+    background: url("../images/main/mv_02.jpg") no-repeat center top;
+}
+
+#mainBanner .mb li.mb3 {
+    background: url("../images/main/mv_03.jpg") no-repeat center top;
+}
+
+#mainBanner .mb li .comment {
+    padding: 100px 0px;
+    font-size: 20px;
+}
+
+#mainBanner .mb li h3 {
+    font-size: 50px;
+    font-weight: 700;
+}
+
+#mainBanner .mb li .term {
+    padding-top: 100px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+#mainBanner .mb li.mb1 h3 span {
+    color: #f36138;
+}
+
+#mainBanner .mb li.mb2 h3 span {
+    color: #7c1e04;
+}
+
+#mainBanner .mb li.mb3 h3 span {
+    color: #758246;
+}
+
+/* Arrows */
+#mainBanner .slick-prev, #mainBanner .slick-next {
+    width: 70px;
+    height: 70px;
+    font-size: 0px;
+    line-height: 0;
+    display: block;
+    border: 0;
+    position: absolute;
+    top: 50%;
+    z-index: 999;
+    transform: translate(0, -50%);
+    transition: opacity 0.5s;
+    opacity: .5;
+    cursor: pointer;
+    outline: none;
+}
+
+#mainBanner .slick-prev:hover, #mainBanner .slick-prev:focus, #mainBanner .slick-next:hover, #mainBanner .slick-next:focus {
+    opacity: 1;
+}
+
+#mainBanner .slick-prev {
+    left: 0px;
+    background: rgba(0, 0, 0, 0.3) url('../images/main/visual_btn_prev.png') no-repeat center center;
+}
+
+#mainBanner .slick-next {
+    right: 0px;
+    background: rgba(0, 0, 0, 0.3) url('../images/main/visual_btn_next.png') no-repeat center center;
+}
+
+/* Dots */
+#mainBanner .slick-dots {
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    display: block;
+    position: absolute;
+    left: 50%;
+    bottom: 30px;
+    transform: translateX(-150px);
+}
+
+#mainBanner .slick-dots li {
+    margin: 0px;
+    padding: 0px;
+    width: 100px;
+    height: 3px;
+    display: inline-block;
+    background: #000;
+    position: relative;
+    opacity: 0.2;
+    cursor: pointer;
+}
+
+#mainBanner .slick-dots li button {
+    padding: 5px;
+    display: block;
+    color: transparent;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    outline: none;
+}
+
+#mainBanner .slick-dots li.slick-active {
+    opacity: 1;
+    color: #000;
+}
+
+/* contentsMain */
+#contentsMain h2 {
+    font-size: 50px;
+    font-weight: 600;
+    line-height: -1px;
+}
+
+/* product */
+#product {
+    padding: 150px 0px;
+}
+
+#product ul {
+    margin-top: 50px;
+}
+
+#product ul li {
+    margin-left: 20px;
+    width: calc((100% - 60px) / 4);
+    float: left;
+    text-align: center;
+}
+
+#product ul li:first-child {
+    margin-left: 0px;
+}
+
+#product ul li .thumb {
+    background: #eee;
+    line-height: 0px;
+    position: relative;
+}
+
+#product ul li .rank {
+    padding: 20px 15px;
+    display: inline;
+    font-style: italic;
+    color: #fff;
+    background: #a89079;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 9;
+}
+
+#product ul li .hoverImg {
+    background: #eee;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+#product ul li:hover .hoverImg {
+    opacity: 1;
+}
+
+#product ul li .productName {
+    font-size: 20px;
+    font-weight: 600;
+    padding: 2px 0px 30px;
+}
+
+#product ul li .price {
+    font-weight: 600;
+}
+
+#product ul li .sale {
+    color: #f00;
+}
+
+#product ul li .sale span {
+    color: #999;
+    text-decoration: line-through;
+}
+
+#product .btnMore {
+    margin-top: 80px;
+    text-align: center;
+}
+
+#product .btnMore a {
+    padding: 15px 50px;
+    display: inline-block;
+    border: 1px solid #000;
+    font-size: 18px;
+    transition: background 0.5s;
+}
+
+#product .btnMore a:hover {
+    color: #fff;
+    background: #000;
+}
+
+/* teaware */
+#teaware .teawareTxt {
+    float: left;
+}
+
+#teaware .teawareTxt .comment {
+    margin-bottom: 50px;
+    color: #999;
+    font-size: 18px;
+}
+
+#teaware .btnMore a {
+    padding: 15px 50px;
+    display: inline-block;
+    border: 1px solid #000;
+    font-size: 18px;
+    transition: background 0.5s;
+}
+
+#teaware .btnMore a:hover {
+    color: #fff;
+    background: #000;
+}
+
+#teaware .teawareBrand {
+    width: 840px;
+    height: 520px;
+    float: right;
+    position: relative;
+}
+
+#teaware .teawareBrand li {
+    line-height: 0px;
+    overflow: hidden;
+}
+
+#teaware .teawareBrand li:nth-child(1) {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+
+#teaware .teawareBrand li:nth-child(2) {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+}
+
+#teaware .teawareBrand li:nth-child(3) {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+
+#teaware .teawareBrand li img {
+    transition: transform 0.5s;
+}
+
+#teaware .teawareBrand li:hover img {
+    transform: scale(1.2, 1.2);
+}
+
+/* story */
+#story {
+    margin: 150px 0px;
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+}
+
+#story video {
+    width: 100%;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+}
+
+#story .storyTxt {
+    padding-top: 130px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+
+#story .comment {
+    margin-bottom: 50px;
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+#story .btnMore a {
+    padding: 15px 50px;
+    display: inline-block;
+    color: #fff;
+    background: transparent;
+    border: 1px solid #fff;
+    font-size: 18px;
+    transition: background 0.5s;
+}
+
+#story .btnMore a:hover {
+    color: #000;
+    background: #fff;
+}
+
+/* guide */
+#guide .franchise {
+    padding: 40px;
+    width: 330px;
+    height: 330px;
+    color: #fff;
+    float: left;
+    background: url("../images/main/bg_franchise.jpg") no-repeat;
+}
+
+#guide .franchise dt {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    display: inline-block;
+    font-size: 24px;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+#guide .franchise dd {
+    font-size: 18px;
+}
+
+#guide .store {
+    margin-left: 20px;
+    padding: 40px;
+    width: 330px;
+    height: 330px;
+    float: left;
+    color: #fff;
+    background: #758246;
+}
+
+#guide .store dt {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    display: inline-block;
+    font-size: 24px;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+#guide .store dd {
+    font-size: 18px;
+}
+
+#guide .store form {
+    margin-top: 20px;
+    display: inline-block;
+    border: 3px solid #fff;
+}
+
+#guide .store input[type="text"] {  /* 속성 선택자 */
+    padding: 5px;
+    height: 45px;
+    color: #fff;
+    background: #3b4224;
+}
+
+#guide .store input[type="submit"] {    /* 속성 선택자 */
+    width: 40px;
+    height: 45px;
+    font-size: 0px;
+    background: #3b4224 url("../images/main/search.png") no-repeat center center;
+    cursor: pointer;
+}
+
+#guide .info {
+    margin-left: 20px;
+    width: 500px;
+    float: right;
+}
+
+#guide .info .news {
+    padding: 5px 5px 30px;
+    position: relative;
+}
+
+#guide .info .news h3 {
+    padding-bottom: 20px;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+#guide .info .news ul li a {
+    line-height: 1.7;
+    color: #999;
+} 
+
+#guide .info .news ul li .date {
+    float: right;
+}
+
+#guide .info .news ul li a:hover {
+    color: #000;
+}
+
+#guide .info .news ul li.more {
+    position: absolute;
+    right: 5px;
+    top: 8px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+#guide .quickLink li {
+    width: calc(100% / 2);
+    float: left;
+}
+
+#guide .quickLink li:nth-child(1) {
+    background: #cbc3b2;
+}
+
+#guide .quickLink li:nth-child(2) {
+    background: #b1a387;
+}
+
+#guide .quickLink li a {
+    padding: 50px 0px;
+    display: block;
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+    color: #fff;
+}
+
+#guide .quickLink li a span {
+    display: block;
+    font-size: 14px;
+    opacity: 0.5;
+}
+
+/* insta */
+#insta {
+    padding: 150px 0px;
+}
+
+
+#insta h2 span {
+    font-size: 30px;
+    color: #758246;
+}
+
+#insta .instaList {
+    margin-top: 20px;
+}
+
+#insta .instaList li:hover {
+    opacity: 0.7;
+}
+
+/* Arrows */
+#insta .slick-prev, #insta .slick-next {
+    width: 20px;
+    height: 20px;
+    font-size: 0px;
+    line-height: 0;
+    display: block;
+    background: transparent;
+    border-top: 3px solid #000;
+    border-right: 3px solid #000;
+    border-left: 0px;
+    border-bottom: 0px;
+    position: absolute;
+    right: 10px;
+    top: -60px;
+    z-index: 999;
+    transform: translate(0, -50%);
+    transition: opacity 0.5s;
+    cursor: pointer;
+    outline: none;
+    transition: background 0.5s;
+}
+
+#insta .slick-prev:hover, #insta .slick-prev:focus, #insta .slick-next:hover, #insta .slick-next:focus {
+    opacity: 1;
+}
+
+#insta .slick-prev {
+    right: 50px;
+    transform: rotate(-135deg);
+}
+
+#insta .slick-next {
+    right: 0px;
+    transform: rotate(45deg);
+}
+
+/* footer */
+#footer {
+    border-top: 1px solid #ddd;
+}
+
+#footer .inner {
+    height: 310px;
+    background: #fff;
+    position: relative;
+}
+
+#footer h1 {
+    position: absolute;
+    left: 0px;
+    top: 90px;
+}
+
+#footer .footerLink {
+    position: absolute;
+    left: 155px;
+    top: 85px;
+} 
+
+#footer .footerLink li {
+    float: left;
+}
+
+#footer .footerLink li a {
+    margin-right: 20px;
+    display: block;
+    font-size: 16px;
+    color: #000;
+}
+
+#footer .footerLink li:last-child a {
+    margin-right: 0px;
+}
+
+#footer address {
+    font-size: 16px;
+    color: #999;
+    position: absolute;
+    left: 155px;
+    top: 135px;
+}
+
+#footer .copy {
+    font-size: 16px;
+    color: #ccc;
+    position: absolute;
+    left: 155px;
+    top: 205px;
+}
+
+#footer .sns {
+    position: absolute;
+    right: 0px;
+    top: 80px;
+}
+
+#footer .sns li {
+    float: left;
+}
+
+#footer .sns li a {
+    margin-left: 10px;
+    display: block;
+}
+
+#footer .sns li:first-child a {
+    margin-left: 0px;
+}
+
+#footer .cs {
+    font-size: 15px;
+    color: #000;
+    position: absolute;
+    right: 0px;
+    top: 135px;
+}
+
+#footer .number {
+    font-size: 25px;
+    font-weight: 600;
+    color: #ff6600;
+    position: absolute;
+    right: 0px;
+    top: 165px;
+}
+
+/* gotop */
+#wrap .gotop {
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    display: inline-block;
+    color: #fff;
+    text-transform: uppercase;
+    background: url("../images/common/btn_gotop.png") no-repeat center center;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    text-align: center;
+    padding-top: 30px;
+    text-indent: -9999px;
+}

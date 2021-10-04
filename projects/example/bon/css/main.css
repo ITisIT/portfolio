@@ -1,0 +1,216 @@
+@charset "utf-8";
+
+/* header 영역 */
+#header {
+    height: 100px;
+    position: relative;
+}
+
+#header h1 {
+    position: absolute;
+    left: 0px;
+    top: 25px;
+}
+
+#header .gnb {
+    position: absolute;
+    left: 250px;
+    top: 45px;
+}
+
+#header .gnb > li {
+    margin-right: 100px;
+    float: left;
+}
+
+#header .gnb > li:last-child {
+    margin-right: 0px;
+}
+
+#header .gnb > li > a {
+    display: block;
+    font-size: 20px;
+}
+
+#header .util {
+    position: absolute;
+    right: 0px;
+    top: 30px;
+}
+
+#header .util li a {
+    padding: 15px 40px;
+    display: block;
+    font-size: 15px;
+    color: #fff;
+    background: #720000;
+    border-radius: 50px 50px 50px 50px;
+}
+
+/* mainVisual 영역 */
+#mainVisual {
+    width: 100%;
+    height: 705px;
+    background: url("../images/main_visual.jpg") no-repeat center center;
+}
+
+#mainVisual .mainVC h2 {
+    padding: 200px 0px 60px;
+    font-size: 45px;
+    font-weight: 600;
+    line-height: 1.6;
+    color: #fff;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+#mainVisual .mainVC p {
+    font-size: 15px;
+    color: #fff;
+}
+
+/* biz 영역 */
+#biz {
+    padding: 150px 0px;
+    height: 910px;
+    position: relative;
+}
+
+#biz .bizImg {
+    width: 960px;
+    height: 610px;
+    background: url("../images/business_img.jpg") no-repeat center top;
+    position: absolute;
+    right: 0px;
+    top: 150px;
+    z-index: -9999;
+}
+
+/* bizDesc 영역 */
+#biz .bizDesc h3 {
+    font-size: 20px;
+    color: #890000;
+}
+
+#biz .bizDesc dl dt {
+    padding: 45px 0px;
+    font-size: 40px;
+    font-weight: 600;
+    color: #000;
+}
+
+#biz .bizDesc dl dd {
+    font-size: 20px;
+    color: #999;
+}
+
+/* bizBox 영역 */
+#biz .bizBox {
+    background: #fff;
+}
+
+#biz .bizBox li {
+    margin: 50px 0px;
+    width: calc(100% / 4);
+    height: 240px;
+    float: left;
+    text-align: center;
+    border-left: 1px solid #ddd;
+}
+
+#biz .bizBox li a {
+    padding: 160px 0px 28px;
+    display: block;
+}
+
+#biz .bizBox li:nth-child(1) {
+    background: url("../images/icon_01.png") no-repeat center 50px;
+}
+
+#biz .bizBox li:nth-child(2) {
+    background: url("../images/icon_02.png") no-repeat center 50px;
+}
+
+#biz .bizBox li:nth-child(3) {
+    background: url("../images/icon_03.png") no-repeat center 50px;
+}
+
+#biz .bizBox li:nth-child(4) {
+    background: url("../images/icon_04.png") no-repeat center 50px;
+}
+
+
+#biz .bizBox dl dt {
+    font-size: 20px;
+    font-weight: 600;
+    color: #000;
+}
+
+#biz .bizBox dl dd {
+    font-size: 15px;
+    color: #999;
+}
+
+/* support 영역 */
+#support {
+    height: 550px;
+    background: #ddd;
+    position: relative;
+}
+
+#support .suppVideo {
+    width: 650px;
+    height: 550px;
+    background: url("../images/main_video_img.jpg") no-repeat center center;
+    z-index: -8888;
+    float: left;
+}
+
+#support .suppVideo a {
+    position: relative;
+}
+
+#support .suppVideo a img{
+    display: block;
+    position: absolute;
+    left: 270px;
+    top: 225px;
+    border: 5px solid #fff;
+    border-radius: 100px;
+}
+
+#support .suppDesc {
+    padding: 50px;
+    width: 550px;
+    height: 550px;
+    background: #fff;
+    float: right;
+}
+
+#support .suppDesc h3 {
+    font-size: 20px;
+    color: #890000;
+}
+
+#support .suppDesc dl dt {
+    padding: 45px 0px;
+    font-size: 40px;
+    font-weight: 600;
+    color: #000;
+}
+
+#support .suppDesc dl dd {
+    margin-bottom: 35px;
+    font-size: 20px;
+    color: #999;
+}
+
+#support .more {
+    padding: 15px 50px;
+    display: inline-block;
+    font-size: 20px;
+    color: #000;
+    background: #fff;
+    border: 3px solid #ddd;
+    border-radius: 50px;
+}
+
