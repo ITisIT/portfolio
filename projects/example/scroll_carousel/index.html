@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포트폴리오용 Scroll Carousel</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .s{
+            background-color: lawngreen;
+        }
+
+        #container{
+            height: 100vh;
+            background-color: #0F4C81;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .navi{
+            display: flex;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        .navi li{
+            margin-left: 10px;
+            color: #fff;
+        }
+
+        .track{
+            display: flex; flex-wrap: wrap;
+            align-items: center;
+            position: absolute;
+            left: 0;
+            top: 50%; transform: translateY(-50%);
+            /* width: calc((270px + 20px) * 20); */
+        }
+
+        .item{
+            margin: 0 10px;
+            width: 270px;
+            height: 380px;
+            background-image: url(./image1/pic1.jpg);
+            background-size: cover;
+            background-position: center top;
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 3px 3px 3px rgba(0,0,0,0.65);
+        }
+
+        .item .txt{
+            position: absolute;
+            bottom: 0; left: 0;
+            width: 100%; box-sizing: border-box;
+            padding: 16px 12px; color: #fff;
+            background-color: rgba(0,0,0,0.65);
+        }
+
+        .s1{
+            height: 123vh;
+            background-color: lightskyblue;
+            line-height: 123vh;
+            text-align: center;
+            color: beige;
+            font-size: 120px;
+        }
+
+        .s2{
+            height: 150vh;
+            line-height: 150vh;
+            background-color: lightpink;
+            color: linen;
+            text-align: center;
+            font-size: 120px;
+        }
+    </style>
+</head>
+<body>
+    <section class="s1">SECTION</section>
+    <section class="s">
+        <div id="container">
+            <ul class="navi">
+                <li>Artwork 01~05</li>
+                <li>Artwork 06~10</li>
+                <li>Artwork 11~15</li>
+                <li>Artwork 16~20</li>
+            </ul>
+            <div class="track">
+                <!-- <div class="item">
+                    <div class="txt">
+                        <h3>Artwork 01</h3>
+                        <p>동해물과 백산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </section>
+    <section class="s2">SECTION</section>
+    
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        var src = ["pic1.jpg", "pic2.jpg", "pic3.jpg", "pic4.jpg", "pic5.jpg", "pic6.jpg", "pic7.jpg", "pic8.jpg", "pic9.jpg", "pic10.jpg"];
+        var num = 0;
+        var srcLeng = src.length;
+
+        for(i=0; i<20; i++){
+            var idx = num % srcLeng;
+
+            var item = `
+                <div class="item">
+                    <img src="./image1/${src[idx]}">
+                    <div class="txt">
+                        <h3>Artwork ${i+1}</h3>
+                        <p>동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세</p>
+                    </txt>
+                </div>
+            `
+            $(".track").append(item);
+
+            num++;
+        }
+
+        var itemLeng = $(".track .item").length;
+        var itemWidth = $(".track .item").width();
+        var itemMarg = 20;
+        var trackWidth = (itemWidth + itemMarg) * itemLeng;
+        $(".track").width(trackWidth);
+        $("section.s").height(trackWidth);
+
+        var fixStart = $("section.s").offset().top;
+        var fixEnd = $("section.s").next().offset().top;
+        var winHeight = $(window).height();
+        console.log(winHeight);
+
+        $(window).on("scroll", function() {
+            var scr= $(this).scrollTop();
+            if(scr >= fixStart && scr <= (fixEnd - winHeight)) {
+                $(".track").css("left",-scr + fixStart);
+                $("#container").css({
+                    "position": "fixed",
+                    "width" : "100%",
+                    "height" : "100vh",
+                    "top" : 0,
+                    "left" : 0
+                });
+            } else if (scr > (fixEnd - winHeight)){
+                $("#container").css({
+                    "position" : "relative",
+                    "top" : trackWidth - winHeight // 부모 높이 값 - 윈도우 높이 값
+                });
+            } else if (scr < fixStart) {
+                $("#container").css({
+                    "position" : "relative",
+                    "top" : 0
+                });
+            }
+        });
+
+        function setItem(elem,itemW, itemH) {
+            expanded = itemW;
+            elem.siblings().stop().animate({
+                "width" : 270,
+                "height" : 380
+            });
+            elem.stop().animate({
+                "width" : itemW,
+                "height" : itemH
+            }).find("img").css({
+                "width" : itemW,
+                "height" : itemH
+            });           
+        }
+        
+        var expanded; /*확장된 item의 너비값*/
+        $(".item").on("click", function() {
+            var nW = $(this).find("img")[0].naturalWidth;
+            var nH = $(this).find("img")[0].naturalHeight;
+
+            $(".track").width(trackWidth + (nW - itemWidth));
+
+            var rat = nW / nH;
+            /*
+                rat = 1 -> 정방형
+                rat > 1 -> 가로가 긴 이미지
+                rat < 1 -> 세로가 긴 이미지
+            */
+
+            if(rat === 1 && nH >= 700){
+                setItem($(this),700,700);
+            } else if(rat > 1 && nW >= 1000) {
+                setItem($(this),1000, 1000*rat);
+            } else if(rat < 1 && nH >= 700) {
+                setItem($(this),700*rat, 700);
+            } else {
+                setItem($(this),nW, nH);
+            }
+            
+            /*확장 된 item을 화면 중앙으로 위치시키기*/
+            var i = $(this).index();
+            var w = $(window).width() / 2;
+            var Y = w - ((expanded / 2) + (itemMarg / 2));
+            var X = (itemWidth + itemMarg) * i;
+            var Z = fixStart + X - Y;
+
+            if (Z > fixStart && Z < fixEnd - fixStart) {
+                $("html, body").stop().animate({
+                    "scrollTop" : Z // 앞에 내용을 유지시켜줌
+                });
+            }
+        });
+        console.log(fixStart);
+        $(".navi li").on("click", function () {
+            var artIndex = $(this).index();
+            console.log(artIndex);
+
+            $("html, body").animate({
+                "scrollTop" : fixStart + (itemWidth + itemMarg) * 5 * artIndex 
+            });
+        });
+    </script>
+</body>
+</html>

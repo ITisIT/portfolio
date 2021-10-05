@@ -1,0 +1,97 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    color: inherit;
+    text-decoration: none;
+}
+
+#container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/bg_morning.jpg);
+    background-size: cover;
+}
+
+#container.morning{background-image: url(../images/bg_morning.jpg);}
+#container.afternoon{background-image: url(../images/bg_afternoon.jpg);}
+#container.evening{background-image: url(../images/bg_evening.jpg);}
+#container.night{background-image: url(../images/bg_night.jpg);}
+
+h1{
+    position: fixed;
+    top: 20px;
+    left: 20px;
+}
+
+h1 img{width: 100px;}
+h1 img.b{display: block;}
+h1 img.w{display: none;}
+
+nav{
+    max-width: 1000px;
+    width: 100%;
+    position: fixed;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+    z-index: 999999; /* z축 */
+}
+
+nav div{
+    width: 20%;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    background-color: rgba(255,255,255,0.5);
+    text-align: center;
+    font-weight: bold;
+}
+
+nav div.on{background-color: rgba(0,0,0,0.6); color: #fff;}
+
+figure{
+    width: 1226px;
+    height: 809px;
+    position: absolute;
+    top: 200px;
+    right: -250px;
+    background-image: url(../images/phone_morning.png);
+}
+
+figure .display{
+    width: 544px;
+    height: 307px;
+    position: absolute;
+    top: 100px;
+    left: 136px;
+}
+
+figure .display .clock{
+    position: absolute;
+    top: 50%; left: 0; transform: translate(0, -50%);
+    font-size: 80px;
+    text-align: center;
+    width: 100%;
+}
+
+article {
+    position: absolute;
+    left: 100px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+article h2{font-size: 62px;}
+article h2 {color: #888;}
+article p {font-size: 24px;}
+
+/* .morning article h2{}
+.morning article h2 span{}
+.morning article p{}
+*/
+

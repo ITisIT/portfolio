@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>포트폴리오용 Basic Slider</title>
+    <style>
+        #wrap {
+            overflow: hidden;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 1000px;
+            height: 400px;
+        }
+
+        .track {
+            display: flex;
+            flex-wrap: wrap;
+            /*            width: 5000px;*/
+            position: relative;
+            /*            left: ;*/
+            /*            position
+                1. absolute : 부모 요소 중에서 포지션 값을 갖고 있는 요소를 기준.
+            
+                2. relative : 기존에 위치하던 자리에서 이동
+            
+                3. fixed : window를 기준으로 위치를 고정
+            */
+        }
+
+        .track div {
+            width: 1000px;
+            height: 100%;
+            color: bisque;
+            line-height: 400px;
+            text-align: center;
+            font-size: 50px;
+            user-select: none;
+        }
+
+        #wrap .box1 {
+            background-color: dodgerblue;
+        }
+
+        #wrap .box2 {
+            background-color: tomato
+        }
+
+        #wrap .box3 {
+            background-color: darkseagreen
+        }
+
+        #wrap .box4 {
+            background-color: mediumpurple
+        }
+
+        #wrap .box5 {
+            background-color: turquoise
+        }
+
+        .arrow {
+            list-style: none;
+            padding: 0;
+            position: fixed;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            width: 100%;
+            padding: 0 5%;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        button {
+            padding: 20px 30px;
+        }
+
+        .auto {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="wrap">
+        <div class="track">
+            <div class="box1 view">box1</div>
+            <div class="box2">box2</div>
+            <div class="box3">box3</div>
+            <div class="box4">box4</div>
+            <div class="box5">box5</div>
+        </div>
+    </div>
+
+    <ul class="arrow">
+        <li class="prv">
+            <button>Prev</button>
+        </li>
+        <li class="nxt">
+            <button>Next</button>
+        </li>
+    </ul>
+
+    <button class="auto">Auto Play</button>
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        var boxWidth = $(".track div").width();
+        var boxLength = $(".track div").length;
+        var trackWidth = boxWidth * boxLength;
+        var autoPlay = null; //clearInterval을 위한 변수
+
+        //슬라이더 기본 세팅
+        $(".track").css("marginLeft", -boxWidth);
+        $(".track div:last-child").prependTo(".track");
+        $(".track").width(trackWidth);
+
+        function moveSlider(i) {//인자 i는 움직임의 방향
+
+            $(".track").animate({
+                "left": i * boxWidth
+            }, 1000, function () {
+                $(".track").css("left", 0);
+
+                if (i < 0) {//next
+                    $(".track div:first-child").appendTo(".track");
+                } else if (i > 0) {//prev
+                    $(".track div:last-child").prependTo(".track");
+                }
+            });
+
+        }
+
+        $(".nxt").on("click", function () {
+            clearInterval(autoPlay); //자동재생멈추고
+            moveSlider(-1);//슬라이더 움직인 다음,
+            if (autoPlay !== null) {
+                //원래 자동재생 중이었다면!
+                autoPlay = setInterval(function () {
+                    moveSlider(-1);
+                }, 3000);//다시 반복 재개
+            }
+        });
+
+        $(".prv").on("click", function () {
+            clearInterval(autoPlay);
+            moveSlider(1);
+            if (autoPlay !== null) {
+                autoPlay = setInterval(function () {
+                    moveSlider(-1);
+                }, 3000);
+            }
+        });
+
+
+
+        $(".auto").on("click", function () {
+            $(this).toggleClass("play");
+            var play = $(this).hasClass("play");
+            //클래스 여부에 따라 true or false 반환
+
+            if (play) {//클래스명을 갖고있다면,
+                autoPlay = setInterval(function () {
+                    moveSlider(-1);
+                }, 3000);//자동재생 시작
+            } else {
+                clearInterval(autoPlay);//자동재생 멈춤
+                autoPlay = null; //변수 비우기
+            }
+        });
+
+
+        var startPoint = null;
+        var currentPoint = null;
+        $("#wrap").on("touchstart", function (e) {
+            startPoint = e.touches[0].clientX;
+        });
+
+        $("#wrap").on("touchmove", function (e) {
+            if (startPoint !== null) {
+                currentPoint = e.touches[0].clientX;
+
+                $(".track").css({
+                    "left": currentPoint - startPoint
+                });
+            }
+        });
+
+        $("#wrap").on("touchend", function () {
+            var direction = currentPoint - startPoint;
+            var distance = Math.abs(direction);//절대값
+
+            if (distance > 600 && direction < 0) {
+                moveSlider(-1);
+            } else if (distance > 600 && direction > 0) {
+                moveSlider(1);
+            } else {
+                $(".track").stop().animate({
+                    "left": 0
+                });
+            }
+
+        });
+
+    </script>
+
+</body>
+
+</html>

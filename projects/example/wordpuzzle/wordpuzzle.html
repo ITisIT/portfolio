@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>포트폴리오용 Word Puzzle</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none
+        }
+
+        h1 {
+            text-align: center;
+            padding: 30px 0;
+        }
+
+        .output {
+            width: 1000px;
+            height: 40px;
+            line-height: 40px;
+            font-size: 24px;
+            text-align: center;
+            border: 1px solid #000;
+            margin: 0 auto 45px;
+        }
+
+        ul {
+            width: 800px;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        li {
+            display: inline-block;
+            padding: 6px 13px;
+            border-radius: 50px;
+            margin: 10px 20px;
+            background-color: #ccc;
+            border: 3px solid #000;
+            border-style: outset;
+        }
+
+        li:active {
+            background-color: #bbb;
+            border-style: outset;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>WORD MATCH PUZZLE</h1>
+    <div class="output"></div>
+    <ul>
+        <li>백두산이</li>
+        <li>하느님이</li>
+        <li>우리나라</li>
+        <li>닳도록</li>
+        <li>보우하사</li>
+        <li>만세</li>
+        <li>마르고</li>
+        <li>동해물과</li>
+    </ul>
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        // 각각의 li를 클릭해서 문장 완성시키기.
+        // 문장의 출력은 output
+
+        var answer = "동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세"
+
+        $("ul li").on("click", function () {
+            var txt = $(this).text();
+            var outTxt = $(".output").text();
+            $(".output").text(`${outTxt} ${txt}`);
+
+            var userAnswer = $(".output").text();
+
+            userAnswer = userAnswer.trim();
+            //문자열 양 끝의 공백을 제거하는 메서드
+
+            //            userAnswer = userAnswer.split(" ")
+            //            console.log(userAnswer)
+
+            if (userAnswer === answer) {
+                alert("정답입니다.");
+            }
+        })
+    </script>
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
