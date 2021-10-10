@@ -1,0 +1,215 @@
+@charset "utf-8";
+@import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css');
+@import url("https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css");
+
+body h2 {
+    font-size: 50px;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+}
+
+/* top */
+#top {
+    height: 969px;
+    background: url("../images/Top_Bg.jpg") no-repeat center center;
+}
+
+#top .inner {
+    position: relative;
+    height: 969px;
+}
+
+#top .topTitle h1 {
+    margin-left: -25px;
+    padding-top: 50px;
+    width: 695px;
+}
+
+#top .topTitle p.subTitle {
+    font-size: 32px;
+    font-weight: 700;
+    color: #fbfbfb;
+    line-height: 0px;
+}
+
+#top .topDesc {
+    position: absolute;
+    right: 0px;
+    bottom: 50px;
+}
+
+#top .topDesc p {
+    font-size: 18px;
+    font-weight: 400;
+    text-align: right;
+    line-height: 1.8;
+    color: #fbfbfb;
+}
+
+/* about */
+#about {
+    width: 100%;
+    height: 450px;
+    background: url("../images/About_Bg.jpg") no-repeat center center;
+}
+
+#about h2 {
+    padding: 90px 0px 30px;
+}
+
+#about p {
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 1.8;
+    text-align: center;
+    color: #eee;
+}
+
+/* designConcept */
+#designConcept {
+    padding: 120px 0px;
+    background: #2f2f2f;
+}
+
+#designConcept ul {
+    padding: 120px 120px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#designConcept ul li img {
+    width: 100%;
+    height: 100%;
+}
+
+#designConcept ul li p {
+    padding-top: 55px;
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center;
+    color: #a66851;
+}
+
+/* coty */
+#coty {
+    background: #333;
+}
+
+#coty .inner {
+    padding: 120px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+#coty h2 {
+    padding-bottom: 120px;
+}
+
+#coty .contents {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#coty .contents .left {
+    padding-right: 15px;
+}
+
+#coty .typo {
+    padding-top: 16px;
+    width: 817px;
+    height: 631px;
+}
+
+#coty .typo dl dt {
+    padding-bottom: 90px;
+    font-size: 45px;
+    font-weight: 700;
+    color: #ddd;
+}
+
+#coty .typo dl dt span {
+    padding-left: 70px;
+    font-size: 30px;
+    font-weight: 700;
+    color: #ddd;
+}
+
+#coty .typo dl dd {
+    font-size: 30px;
+    font-weight: 700;
+    color: #ddd;
+}
+
+#coty .typo dl dd span {
+    font-size: 22px;
+    font-weight: 400;
+    color: #ddd;
+}
+
+/* main */
+#main {
+    padding: 120px 0px;
+    background: #555;
+}
+
+#main h2 {
+    padding-bottom: 70px;
+}
+
+#main .inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#main div.pc, div.tab {
+    padding-top: 50px;
+}
+
+/* sub */
+#sub {
+    padding: 120px 0px;
+    background: #414141;
+}
+
+#sub h2 {
+    padding-bottom: 0px;
+}
+
+#sub .inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#sub .desc {
+    margin-top: -130px;
+}
+
+#sub div.pc, div.mobile {
+    padding-top: 120px;
+}
+
+#sub .mobile {
+    align-self: flex-start;
+}
+
+/* mockup */
+#mockup {
+    padding: 120px 0px;
+    background: #d9d9d9;
+}
+
+#mockup h2 {
+    color: #414141;
+}
+
+#mockup .all img {
+    width: 100%;
+    height: 100%;
+}
