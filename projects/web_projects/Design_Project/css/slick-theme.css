@@ -1,0 +1,184 @@
+/* mainBanner */
+/* Arrows */
+#mainBanner .slick-prev, #mainBanner .slick-next {
+    width: 100px;
+    height: 100px;
+    font-size: 0px;
+    line-height: 0;
+    display: block;
+    border: none;
+    position: absolute;
+    top: 50%;
+    z-index: 999;
+    transform: translateY(-50%);
+    transition: opacity 0.5s;
+    opacity: .7;
+    cursor: pointer;
+    outline: none;
+}
+
+#mainBanner .slick-prev:hover, #mainBanner .slick-prev:focus, #mainBanner .slick-next:hover, #mainBanner .slick-next:focus {
+    opacity: 1;
+}
+
+#mainBanner .slick-prev {
+    left: 0px;
+    background: url("../images/Main/Left_Arrow_Box.png") no-repeat center center;
+}
+
+#mainBanner .slick-next {
+    right: 0px;
+    background: url("../images/Main/Right_Arrow_Box.png") no-repeat center center;
+}
+
+/* Dots */
+#mainBanner .slick-dotted.slick-slider
+{
+    margin-bottom: 30px;
+}
+
+#mainBanner .slick-dots
+{
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    height: 20px;
+    display: block;
+    text-align: center;
+    list-style: none;
+    position: absolute;
+    bottom: 50px;
+}
+#mainBanner .slick-dots li
+{
+    margin: 0px 20px;
+    padding: 0px;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    /* transform: rotateX(180deg); */
+}
+#mainBanner .slick-dots li button
+{
+    padding: 5px;
+    width: 20px;
+    height: 20px;
+    display: block;
+    font-size: 0px;
+    line-height: 0px;
+    color: transparent;
+    background: transparent;
+    border: 0px;
+    cursor: pointer;
+    outline: none;
+}
+#mainBanner .slick-dots li button:hover,
+#mainBanner .slick-dots li button:focus
+{
+    outline: none;
+}
+#mainBanner .slick-dots li button:hover:before,
+#mainBanner .slick-dots li button:focus:before
+{
+    opacity: 1;
+}
+#mainBanner .slick-dots li button:before
+{
+    content: '';
+    width: 20px;
+    height: 20px;
+    font-family: 'slick';
+    font-size: 6px;
+    line-height: 20px;
+    text-align: center;
+    color: black;
+    background: #fff;
+    border-radius: 50%;
+    opacity: .25;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+#mainBanner .slick-dots li.slick-active button:before
+{
+    opacity: .75;
+    color: #fff;
+}
+
+/* clovaPro */
+/* Arrows */
+#clovaPro .slick-prev, #clovaPro .slick-next {
+    width: 100px;
+    height: 100px;
+    font-size: 0px;
+    line-height: 0;
+    display: block;
+    border: none;
+    position: absolute;
+    top: 50%;
+    z-index: 999;
+    transform: translateY(-90%);
+    transition: opacity 0.5s;
+    opacity: .7;
+    cursor: pointer;
+    outline: none;
+}
+
+#clovaPro .slick-prev:hover, #clovaPro .slick-prev:focus, #clovaPro .slick-next:hover, #clovaPro .slick-next:focus {
+    opacity: 1;
+}
+
+#clovaPro .slick-prev {
+    left: 260px;
+    background: url("../images/Main/Left_Arrow.png") no-repeat center center;
+}
+
+#clovaPro .slick-next {
+    right: 260px;
+    background: url("../images/Main/Right_Arrow.png") no-repeat center center;
+}
+
+#clovaPro .slick-dots {
+    display: none;
+}
+
+/* partner */
+/* Arrows */
+#partner .slick-prev, #partner .slick-next {
+    width: 100px;
+    height: 100px;
+    font-size: 0px;
+    line-height: 0;
+    display: block;
+    border: none;
+    position: absolute;
+    top: 50%;
+    z-index: 999;
+    transform: translateY(-40%);
+    transition: opacity 0.5s;
+    opacity: .7;
+    cursor: pointer;
+    outline: none;
+}
+
+#partner .slick-prev:hover, #partner .slick-prev:focus, #partner .slick-next:hover, #partner .slick-next:focus {
+    opacity: 1;
+}
+
+#partner .slick-prev {
+    left: 0px;
+    background: url("../images/Main/Left_Arrow.png") no-repeat center center;
+}
+
+#partner .slick-next {
+    right: 0px;
+    background: url("../images/Main/Right_Arrow.png") no-repeat center center;
+}
+
+#partner .slick-dots {
+    display: none;
+}
