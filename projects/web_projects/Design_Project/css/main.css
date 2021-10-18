@@ -226,11 +226,6 @@ p.comment {
     background-size: contain;
 }
 
-#ad .as li.as5 {
-    background: url("../images/ad/Yoga_Ad.jpg") no-repeat center center;
-    background-size: contain;
-}
-
 /* Arrows */
 #ad .slick-prev,#ad .slick-next {
     width: 20px;
