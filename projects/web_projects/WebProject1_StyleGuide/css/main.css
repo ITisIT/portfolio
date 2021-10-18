@@ -33,16 +33,39 @@
 }
 
 #top .topDesc dl dd {
-    padding-bottom: 50PX;
+    padding-bottom: 50px;
     font-size: 36px;
     font-weight: 900;
     color: #000;
+}
+
+#top .topDesc h1 {
+    padding-bottom: 0px;
 }
 
 #top .topDesc h1 img {
     width: 210px;
     height: 91px;
 }
+
+#top .topDesc p.view a {
+    margin-top: 30px;
+    padding: 10px 30px;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 700;
+    color: #333;
+    border: 1px solid #333;
+    border-radius: 10px;
+    transition: color 0.4s, background 0.4s;
+}
+
+#top .topDesc p.view a:hover {
+    color: #8784d9;
+    background: #333;
+}
+
+
 
 #top .designBy .b1 {
     font-size: 30px;

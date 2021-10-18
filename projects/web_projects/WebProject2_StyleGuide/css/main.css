@@ -33,6 +33,22 @@ body h2 {
     line-height: 0px;
 }
 
+#top .topTitle p.view a {
+    margin-top: 50px;
+    padding: 10px 30px;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    border: 1px solid #fff;
+    transition: color 0.4s, background 0.4s;
+}
+
+#top .topTitle p.view a:hover {
+    color: #c9a083;
+    background: #fff;
+}
+
 #top .topDesc {
     position: absolute;
     right: 0px;
