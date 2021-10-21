@@ -7,6 +7,10 @@
     user-select: none;
 }
 
+#wrap {
+    background: #000;
+}
+
 .resume img {
     margin: 0px auto;
     display: block;

@@ -35,7 +35,7 @@ input, select, textarea { vertical-align: middle; }
 
 /* 공통사항 */
 body { font-family: 'Nanum Gothic', sans-serif; font-size: 100%; line-height: 1.5; color: #000; }
-.inner { width: 1920px; margin: 0 auto; }
+.inner { width: 1200px; margin: 0 auto; }
 
 
 
