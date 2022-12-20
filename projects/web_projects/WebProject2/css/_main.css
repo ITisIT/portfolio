@@ -10,15 +10,13 @@
     * > div.fp-tableCell {
         margin: 0px;
         padding: 0px;
-        /* width: 1024px; */
-        width: 100%;
+        width: 1024px;
         height: 1366px;
     }
 
     * > div.container {
         margin: 0px;
         padding: 0px;
-        width: 100%;
         max-width: 1024px;
     }
 
@@ -38,23 +36,20 @@
     * > div.fp-tableCell {
         margin: 0px;
         padding: 0px;
-        width: 100%;
-        /* width: 767px; */
+        width: 767px;
         height: 844px;
     }
 
     * > div.container {
         margin: 0px;
         padding: 0px;
-        width: 100%;
         max-width: 767px;
     }
 
     body.fp-responsive, body.fp-viewing-menu1-0 {
         margin: 0px;
         padding: 0px;
-        width: 100%;
-        /* width: 767px; */
+        width: 767px;
         height: 844px;
     }
 }
@@ -184,7 +179,6 @@ body br.none {
     right: 0px;
     top: 0px;
     display: none;
-    z-index: 999999999;
 }
 
 #header .wrapMgnb::before {
@@ -198,8 +192,7 @@ body br.none {
 }
 
 #header .mgnb > li {
-    /* margin: 0px 75px; */
-    margin: 0px 35px;
+    margin: 0px 75px;
     margin-bottom: 50px;
     padding-bottom: 50px;
     border-bottom: 1px solid #888;
@@ -217,8 +210,7 @@ p.close {
     height: 2px;
     background: #c9a083;
     position: absolute;
-    /* right: 100px; */
-    right: 55px;
+    right: 100px;
     top: 55px;
     transform: rotate(-45deg);
     cursor: pointer;
@@ -234,12 +226,6 @@ p.close::after {
     top: 0px;
     transform: rotate(90deg);
     cursor: pointer;
-}
-
-@media all and (max-width:1500px) {
-    .inner {
-        width: 100%; 
-    }
 }
 
 /* tablet */
@@ -617,12 +603,6 @@ p.close::after {
     }
 }
 
-@media all and (max-width:500px) {
-    #mainVisual .boutique ul li a p {
-        font-size: 24px;
-    }
-}
-
 
 
 /* watches */
@@ -767,14 +747,12 @@ p.close::after {
     #watches .inner {
         margin: 0px;
         padding: 65px 0px;
-        width: 100%;
-        /* max-width: 767px; */
+        max-width: 767px;
     }
     
     #watches ul {
         margin: 0px auto;
-        width: 100%;
-        /* width: 50%; */
+        width: 50%;
         display: flex;
         flex-direction: column;
         text-align: center;
@@ -856,20 +834,17 @@ p.close::after {
     #collection {
         /* padding: 100px 0px; */
         max-width: 1024px;
-        width: 100%;
         text-align: center;
     }
 
     #collection img {
-        /* width: 85%; */
-        width: 100%;
+        width: 85%;
     }
 
     #collection .inner {
         margin: 0px auto;
         display: inline-block;
-        width: 100%;
-        max-width: 1024px;
+        /* max-width: 1024px; */
     }
 
 }
@@ -878,8 +853,7 @@ p.close::after {
 @media all and (min-width:320px) and (max-width:767px) {
     #collection {
         padding: 100px 0px;
-        width: 100%;
-        max-width: 767px;
+        min-width: 767px;
         /* height: 844px; */
         /* position: relative; */
     }
@@ -902,7 +876,7 @@ p.close::after {
     #collection img {
         margin: 0px auto;
         display: block;
-        /* width: 75%; */
+        width: 75%;
     }
 
     #collection h2 {
@@ -979,7 +953,6 @@ p.close::after {
 
     #classic .inner {
         margin: 0px;
-        width: 100%;
         max-width: 1024px;
     }
 
@@ -1028,12 +1001,10 @@ p.close::after {
         /* width: 384px; */
         /* height: 844px; */
         background: url("../images/main/PlayList_Mobile.jpg") no-repeat center center;
-        background-size: cover;
     }
 
     #classic .playlist {
-        /* padding: 226.5px 63px; */
-        padding: 226px 20px;
+        padding: 226.5px 63px;
         width: 50%;
         /* width: 384px; */
         /* height: 844px; */
@@ -1050,24 +1021,6 @@ p.close::after {
         padding-bottom: 50px;
         font-size: 0.875rem;    /* font-size: 14px; */
         line-height: 1.8;
-    }
-}
-
-@media all and (max-width:700px) {
-    #classic .twist {
-        padding: 0px;
-        height: 500px;
-    }
-
-    #classic .playlist {
-        padding: 0px;
-        width: 50%;
-        height: 500px;
-    }
-
-    #classic .playlist h2 {
-        padding: 65px 0px 30px;
-        font-size: 20px;
     }
 }
 
@@ -1197,24 +1150,6 @@ p.close::after {
     }
 }
 
-@media all and (max-width:700px) {
-    #contact .service {
-        padding: 0px;
-        height: 500px;
-    }
-
-    #contact .contactUs h2 {
-        padding: 120px 0px 30px;
-        font-size: 20px;
-    }
-
-    #contact .contactUs {
-        padding: 0px;
-        width: 50%;
-        height: 500px;
-    }
-}
-
 
 /* footer */
 #footer {
@@ -1329,9 +1264,7 @@ p.close::after {
     #footer > div.fp-tableCell {
         margin: 0px;
         padding: 0px;
-        width: 100%;
-        max-width: 1024px;
-        /* width: 1024px; */
+        width: 1024px;
         height: 445px;
     }
 
@@ -1376,9 +1309,7 @@ p.close::after {
     #footer > div.fp-tableCell {
         margin: 0px;
         padding: 0px;
-        width: 100%;
-        max-width: 767px;
-        /* width: 767px; */
+        width: 767px;
         height: 445px;
     }
 
@@ -1393,24 +1324,14 @@ p.close::after {
         display: initial;
         flex-wrap: wrap;
         text-align: center;
-        /* position: relative; */
-    }
-
-    #footer h1 {
-        /* position: absolute;
-        left: 50%;
-        top: -70px;
-        transform: translateX(-50%); */
         position: relative;
     }
 
-    #footer h1 a {
-        display: block;
-        width: 100%;
+    #footer h1 {
         position: absolute;
         left: 50%;
         top: -70px;
-        /* transform: translateX(-50%); */
+        transform: translateX(-50%);
     }
 
     #footer address {
@@ -1419,10 +1340,6 @@ p.close::after {
 
     #footer .fcontents {
         margin-top: 30px;
-    }
-
-    #footer li:nth-child(1) select {
-        width: unset;
     }
 
     #footer .sns {
