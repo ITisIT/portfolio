@@ -115,7 +115,7 @@ select {
 
 /* 공통사항 */
 body { font-family: "NanumSquare", sans-serif; font-size: 100%; line-height: 1.5; color: #000; }
-.inner { width: 100%; max-width: 1500px; margin: 0 auto; }   /* width: 1610px; */
+.inner { width: 1500px; margin: 0 auto; }   /* width: 1610px; */
 
 
 

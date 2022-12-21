@@ -12,7 +12,6 @@
         padding: 0px;
         /* width: 1024px; */
         width: 100%;
-        max-width: 1024px;
         height: 1366px;
     }
 
@@ -40,7 +39,6 @@
         margin: 0px;
         padding: 0px;
         width: 100%;
-        max-width: 767px;
         /* width: 767px; */
         height: 844px;
     }
@@ -56,7 +54,6 @@
         margin: 0px;
         padding: 0px;
         width: 100%;
-        max-width: 767px;
         /* width: 767px; */
         height: 844px;
     }
@@ -339,7 +336,6 @@ p.close::after {
 }
 
 #mainVisual .mv li {
-    width: 100%;
     max-width: 1920px;
     height: 823px;
     overflow: hidden;
@@ -484,9 +480,7 @@ p.close::after {
     }
 
     #mainVisual .mv {
-        width: 100%;
-        /* width: 1024px; */
-        max-width: 1024px;
+        width: 1024px;
         height: 1229px;
     }
 

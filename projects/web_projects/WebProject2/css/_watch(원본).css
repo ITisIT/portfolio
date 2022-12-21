@@ -3,18 +3,6 @@
 
 
 /* Tablet */
-/* @media all and (max-width:1499px) {
-    .inner {
-        padding: 0px 100px;
-    }
-}
-
-@media all and (max-width:768px) {
-    .inner {
-        padding: 0px 50px;
-    }
-} */
-
 @media all and (min-width:768px) and (max-width:1024px) {
     .goTop {
         display: inline-block;
@@ -23,16 +11,13 @@
     * > div.fp-tableCell {
         margin: 0px;
         padding: 0px;
-        width: 100%;
-        /* width: 1024px; */
-        max-width: 1024px;
+        width: 1024px;
         height: 1366px;
     }
 
     * > div.container {
         margin: 0px;
         padding: 0px;
-        width: 100%;
         max-width: 1024px;
     }
 
@@ -52,25 +37,20 @@
     * > div.fp-tableCell {
         margin: 0px;
         padding: 0px;
-        width: 100%;
-        /* width: 767px; */
-        max-width: 767px;
+        width: 767px;
         /* height: 844px; */
     }
 
     * > div.container {
         margin: 0px;
         padding: 0px;
-        width: 100%;
         max-width: 767px;
     }
 
     body.fp-responsive, body.fp-viewing-menu1-0 {
         margin: 0px;
         padding: 0px;
-        width: 100%;
-        /* width: 767px; */
-        max-width: 767px;
+        width: 767px;
         height: 844px;
     }
 
@@ -158,26 +138,6 @@ body .imgBox {
     height: 969px;
 }
 
-body .imgBox img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    object-fit: cover;
-}
-
-#movement2 .imgBox img {
-    display: block;
-    width: 100%;
-    height: unset;
-    /* height: 100%; */
-    overflow: hidden;
-    object-fit: cover;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
 
 
 /* header */
@@ -204,21 +164,12 @@ body .imgBox img {
     height: 17px;
 }
 
-#header h1 a {
-    margin: 0px;
-    padding: 0px;
-    width: 100%;
-    display: block;
-    line-height: 0px;
-}
-
 #header .gnb > li {
     display: inline-block;
 }
 
 #header .gnb > li > a {
-    /* margin: 0px 70px; */
-    margin: 0px 40px;
+    margin: 0px 70px;
     color: #fff;
     font-size: 1.25rem;    /* font-size: 20px; */
     font-weight: 400;
@@ -345,12 +296,6 @@ p.close::after {
 }
 
 /* tablet */
-@media all and (max-width:1140px) {
-    #header .gnb > li > a {
-        margin: 0px 25px;
-    }
-}
-
 @media all and (min-width:768px) and (max-width:1024px) {
     #header {
     padding: 3.90625% 0px;  /* padding: 75px 0px; */
@@ -483,8 +428,7 @@ p.close::after {
     /* height: 969px; */
     position: absolute;
     left: 0px;
-    top: 17%;
-    /* top: 15%; */
+    top: 15%;
 }
 
 #overseas video {
@@ -585,32 +529,6 @@ p.close::after {
 #overseas a.btnMore:hover {
     color: #474f59;
     background: #fff;
-}
-
-@media all and (max-width:768px) {
-    #overseas h2 {
-        font-size: 2.1875rem;
-        /* font-size: 40px; */
-    }
-}
-
-@media all and (max-width:595px) {
-    #overseas h2 {
-        font-size: 2.5rem;
-        /* font-size: 35px; */
-    }
-}
-
-@media all and (max-width:1695px) {
-    #bcs {
-        bottom: -25%;
-    }
-}
-
-@media all and (max-width:1410px) {
-    #bcs {
-        bottom: -50%;
-    }
 }
 
 /* tablet */
@@ -715,14 +633,6 @@ p.close::after {
     /* background-size: cover; */
 }
 
-#caseMaterial .caseBg img {
-    width: 100%;
-    display: block;
-    height: 100%;
-    overflow: hidden;
-    object-fit: cover;
-}
-
 /* tablet */
 @media all and (min-width:768px) and (max-width:1024px) {
     #caseMaterial {
@@ -735,20 +645,16 @@ p.close::after {
     }
     
     #caseMaterial .descBox {
-        /* padding: 330px 0px; */
-        padding: 250px 0px 0px;
+        padding: 330px 0px;
         width: calc(100% - 70%);
         height: 1166px;
     }
 
     #caseMaterial .caseBg {
-        padding: 300px 0px;
-        /* padding: 583px 0px; */
+        padding: 583px 0px;
         width: calc(100% - 30%);
         /* height: 1166px; */
-        height: unset;
-        /* background: url("../images/sub/watch1_Tab.png") no-repeat 0px center; */
-        background: url("../images/sub/watch1_Tab.png") no-repeat center center;
+        background: url("../images/sub/watch1_Tab.png") no-repeat 0px center;
         background-size: contain;
     }
 
@@ -849,23 +755,15 @@ p.close::after {
     }
     
     #strapBuckle .etcBox {
-        padding: 250px 0px 0px;
-        /* padding: 330px 0px; */
+        padding: 330px 0px;
         width: calc(100% - 70%);
         height: 1166px;
     }
 
-    #strapBuckle .etcBox br.none {
-        display: block;
-    }
-
     #strapBuckle .imgBox {
-        padding: 400px 0px;
         width: calc(100% - 30%);
-        /* height: 1166px; */
-        height: unset;
-        /* background: url("../images/sub/watch2_Tab.png") no-repeat 0px center; */
-        background: url("../images/sub/watch2_Tab.png") no-repeat center 30px;
+        height: 1166px;
+        background: url("../images/sub/watch2_Tab.png") no-repeat 0px center;
         background-size: contain;
     }
 
@@ -923,9 +821,9 @@ p.close::after {
         align-items: center;
     }
 
-    /* #strapBuckle .desc1, #strapBuckle .desc2 {
+    #strapBuckle .desc1, #strapBuckle .desc2 {
         padding: 0px 50px;
-    } */
+    }
 
     #strapBuckle .imgBox {
         width: 100%;
@@ -970,12 +868,9 @@ p.close::after {
     }
 
     #movement1 .imgBox {
-        padding: 400px 0px;
         width: calc(100% - 30%);
-        /* height: 1166px; */
-        height: unset;
-        /* background: url("../images/sub/watch3_Tab.png") no-repeat 0px center; */
-        background: url("../images/sub/watch3_Tab.png") no-repeat center 80px;
+        height: 1166px;
+        background: url("../images/sub/watch3_Tab.png") no-repeat 0px center;
         background-size: contain;
     }
 
@@ -1072,17 +967,14 @@ p.close::after {
 }
 
 #movement2 .btns {
-    width: 100%;
-    /* width: 600px; */
-    max-width: 600px;
+    width: 600px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: absolute;
     left: 50%;
     top: 85%;
-    /* transform: translateX(-35%); */
-    transform: translateX(-50%);
+    transform: translateX(-35%);
     z-index: 999;
 }
 
@@ -1117,12 +1009,9 @@ p.close::after {
     }
 
     #movement2 .imgBox {
-        padding: 400px 0px;
         width: calc(100% - 30%);
-        /* height: 1166px; */
-        height: unset;
+        height: 1166px;
         background: url("../images/sub/caliber_Tab.png") no-repeat center center;
-        /* background: url("../images/sub/caliber_Tab.png") no-repeat center 50px; */
         background-size: contain;
     }
 
@@ -1135,7 +1024,15 @@ p.close::after {
     }
     
     #movement2 .btns {
+        width: 600px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: absolute;
+        left: 50%;
         top: 70%;
+        transform: translateX(-50%);
+        z-index: 999;
     }
     
     #movement2 .imgBox a {
@@ -1214,8 +1111,7 @@ p.close::after {
         width: 100%;
         height: 618px;
         /* height: calc(100% - 40%); */
-        /* background: url("../images/sub/caliber_Mobile.png") no-repeat center -25px; */
-        background: url("../images/sub/caliber_Mobile.png") no-repeat center 30px;
+        background: url("../images/sub/caliber_Mobile.png") no-repeat center -25px;
         background-size: contain;
     }
 
@@ -1224,38 +1120,24 @@ p.close::after {
     }
 
     #movement2 .btns {
-        padding: 0px 20px;
-        /* top: 80%; */
-        top: 72%;
-        flex-direction: column-reverse;
-        justify-content: center;
+        width: 600px;
+        display: flex;
+        justify-content: space-between;
         align-items: center;
-    }
-
-    #movement2 .btns a {
-        padding: 15px 25px;
-        display: inline-block;
-        font-size: 1.125rem;    /* font-size: 18px; */
+        position: absolute;
+        left: 50%;
+        top: 80%;
+        transform: translateX(-50%);
+        z-index: 999;
     }
     
     #movement2 .imgBox a {
         transition: color 0.5s, background 0.5s;
     }
-
-    #movement2 .imgBox a:nth-of-type(2) {
-        margin-bottom: 15px;
-    }
     
     #movement2 .imgBox a:hover {
         color: #474f59;
         background: #fff;
-    }
-}
-
-@media all and (max-width:595px) {
-    #movement2 .imgBox {
-        background: url("../images/sub/caliber_Mobile.png") no-repeat center 100px;
-        background-size: contain;
     }
 }
 
@@ -1373,9 +1255,7 @@ p.close::after {
     #footer > div.fp-tableCell {
         margin: 0px;
         padding: 0px;
-        width: 100%;
-        max-width: 1024px;
-        /* width: 1024px; */
+        width: 1024px;
         height: 445px;
     }
 
@@ -1420,9 +1300,7 @@ p.close::after {
     #footer > div.fp-tableCell {
         margin: 0px;
         padding: 0px;
-        width: 100%;
-        max-width: 767px;
-        /* width: 767px; */
+        width: 767px;
         height: 445px;
     }
 
@@ -1437,24 +1315,14 @@ p.close::after {
         display: initial;
         flex-wrap: wrap;
         text-align: center;
-        /* position: relative; */
-    }
-
-    #footer h1 {
-        /* position: absolute;
-        left: 50%;
-        top: -70px;
-        transform: translateX(-50%); */
         position: relative;
     }
 
-    #footer h1 a {
-        display: block;
-        width: 100%;
+    #footer h1 {
         position: absolute;
         left: 50%;
         top: -70px;
-        /* transform: translateX(-50%); */
+        transform: translateX(-50%);
     }
 
     #footer address {
@@ -1463,10 +1331,6 @@ p.close::after {
 
     #footer .fcontents {
         margin-top: 30px;
-    }
-
-    #footer li:nth-child(1) select {
-        width: unset;
     }
 
     #footer .sns {
