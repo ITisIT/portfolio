@@ -1,0 +1,303 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* * > div.innerDy {
+    width: 1640px;
+    margin: 0px auto;
+    text-align: center;
+} */
+
+* > h2 {
+    padding-bottom: 20px;
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.875rem;    /* font-size: 30px; */
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+}
+
+* > h3 {
+    font-family: 'Rubik', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #eee;
+    text-align: center;
+}
+
+/* mobile */
+@media all and (min-width:320px) and (max-width:767px) {
+    * > h2 {
+        padding-bottom: 20px;
+        font-size: 1.125rem;    /* font-size: 18px; */
+        font-weight: 700;
+        color: #333;
+        text-align: center;
+    }
+}
+
+body {
+    overflow: hidden;
+}
+
+/* header */
+#header {
+    padding: 25px 0px;
+    background: #000;
+}
+
+#header .inner {
+    width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#header h1 {
+    width: 25px;
+    opacity: 0.6;
+    transition: opacity 0.4s;
+}
+
+#header h1:hover {
+    opacity: 1;
+}
+
+#header .gnb {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#header .gnb li a {
+    padding: 0px 50px;
+    display: block;
+    font-family: 'Rubik', sans-serif;
+    font-size: 1rem;
+    color: #f1f1f1;
+    opacity: 0.6;
+    transition: opacity 0.4s;
+}
+
+#header .gnb li a:hover {
+    opacity: 1;
+}
+
+#header .mmenu {
+    font-size: 0px;
+    width: 40px;
+    height: 3px;
+    background: #f1f1f1;
+    position: relative;
+    cursor: pointer;
+    opacity: 0.4;
+    transition: opacity 0.4s;
+    display: none;
+}
+
+#header .mmenu::before {
+    content: "";
+    width: 40px;
+    height: 3px;
+    background: #f1f1f1;
+    position: absolute;
+    left: 0px;
+    top: -8px;
+    cursor: pointer;
+}
+
+#header .mmenu::after {
+    content: "";
+    width: 40px;
+    height: 3px;
+    background: #f1f1f1;
+    position: absolute;
+    left: 0px;
+    bottom: -8px;
+    cursor: pointer;
+}
+
+#header .mmenu:hover {
+    opacity: 1;
+}
+
+#header .wrapMgnb {
+    display: none;
+    padding: 55px 0px;
+    width: 100%;
+    height: 30%;
+    text-align: center;
+    background: #000;
+    background-size: 160px;
+    position: fixed;
+    right: 0px;
+    top: 82px;
+    z-index: 999999;
+}
+
+#header .mgnb li a {
+    display: block;
+    padding-bottom: 10px;
+    font-family: 'Rubik', sans-serif;
+    color: #f1f1f1;
+    opacity: 0.4;
+    transition: opacity 0.4s;
+}
+
+#header .mgnb li a:hover {
+    opacity: 1;
+}
+
+/* tablet */
+@media all and (min-width:768px) and (max-width:1024px) {
+    #header .inner {
+        width: 80%;
+    }
+
+    #header .gnb {
+        display: none;
+    }
+
+    #header .mmenu {
+        display: block;
+    }
+}
+
+/* mobile */
+@media all and (min-width:320px) and (max-width:767px) {
+    #header .inner {
+        width: 70%;
+    }
+
+    #header .gnb {
+        display: none;
+    }
+
+    #header .mmenu {
+        display: block;
+    }
+}
+
+/* first */
+#first .bg {
+    padding: 14.0625% 0;
+    position: relative;
+}
+
+#first .bg::after {
+    content: "";
+    padding: 15.625% 0px;   /* padding: 300px 0px; */
+    width: 100%;
+    /* background: url("../images/Periodic_Table_of_Elements.jpg") no-repeat center center; */
+    background-size: cover;
+    position: absolute;
+    opacity: 0.5;
+    left: 0px;
+    top: 0px;
+    z-index: -999;
+}
+
+#first .inner {
+    padding: 1.5625% 0 3.125%;
+    /* padding: 30px 0px 60px; */
+    /* width: 1200px; */
+}
+
+/* #first img {
+    margin: 0px auto;
+    padding: 50px 0px;
+    width: 50%;
+    display: block;
+} */
+
+#first .back {
+    padding: 200px 0px;
+    width: 100%;
+    background: url("../images/Periodic_Table_of_Elements.jpg") no-repeat center center;
+    background-size: cover;
+    border-radius: 50px;
+}
+
+#first .back dl {
+    text-align: center;
+}
+
+#first .back dl dt {
+    padding: 30px 0px;
+    font-size: 2.5rem;    /* font-size: 40px; */
+    font-weight: 900;
+    color: #ccc;
+}
+
+#first .back dl dd {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.7;
+    color: #bbb;
+}
+
+#first .tnone {
+    display: none;
+}
+
+#first .mnone {
+    display: none;
+}
+
+/* tablet */
+@media all and (min-width:768px) and (max-width:1024px) {
+    #first .inner {
+        width: 80%;
+    }
+
+    #first h2 {
+        padding-bottom: 10px;
+    }
+
+    #first .tnone {
+        display: block;
+    }
+}
+
+/* mobile */
+@media all and (min-width:320px) and (max-width:767px) {
+    #first .inner {
+        padding-bottom: 10px;
+        width: 50%;
+        display: block;
+    }
+
+    #first h2 {
+        padding-bottom: 10px;
+        color: #fff;
+    }
+
+    #first h3 {
+        font-size: 0.75rem; /* font-size: 12px; */
+    }
+
+    #first .back {
+        padding: 50px 30px;
+        width: 100%;
+        background: url("../images/Periodic_Table_of_Elements.jpg") no-repeat center center;
+        background-size: cover;
+        border-radius: 50px;
+    }
+
+    #first .back dl dt {
+        font-size: 1rem;
+    }
+
+    #first .back dl dd {
+        font-size: 0.75rem; /* font-size: 12px; */
+    }
+
+    #first .tnone {
+        display: block;
+    }
+
+    #first .mnone {
+        display: block;
+    }
+}
+
+

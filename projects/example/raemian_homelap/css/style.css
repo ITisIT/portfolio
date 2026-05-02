@@ -1,0 +1,273 @@
+@charset "utf-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #000;
+}
+
+/* inner 영역 */
+.inner {
+    margin: 0px auto;
+    width: 1200px;
+}
+
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/* header 영역 */
+#header {
+    margin: 0 auto;
+    width: 1200px;
+    height: 150px;
+    position: relative;
+}
+
+#header li {
+    float: left;
+}
+
+#header .util {
+    position: absolute;
+    right: 0;
+    top: 20px;
+}
+
+#header .util li {
+    margin-right: 20px;
+}
+
+#header .util li a {
+    font-size: 15px;
+    color: #a69999;
+}
+
+#header .util li:last-child {
+    margin-right: 0px;
+}
+
+#header h1 {
+    position: absolute;
+    left: 0px;
+    top: 65px;
+}
+
+#header .gnb {
+    position: absolute;
+    right: 0px;
+    top: 65px;
+}
+
+#header .gnb li {
+    margin-right: 60px;
+}
+
+#header .gnb li a {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+#header .gnb li:last-child {
+    margin-right: 30px;
+}
+
+/* outline 영역 */
+#outline {
+    padding: 20px 0px;
+    width: 100%;
+    background-color: #333;
+    position: absolute;
+    left: 0px;
+    top: 130px;
+}
+
+#outline .breadcrumbs {
+    float: left;
+}
+
+#outline .inner {
+    margin: 0px auto;
+    width: 1200px;
+}
+
+#outline .breadcrumbs {
+    padding-left: 5px;
+}
+
+#outline .breadcrumbs li {
+    padding: 0px 13px;
+    float: left;
+    background: url("../images/breadcrumbs_arrow.png") no-repeat 0px center;
+}
+
+#outline .breadcrumbs li:first-child {
+    padding-left: 20px;
+    background: url("../images/home.png") no-repeat 0px center;
+}
+
+#outline .breadcrumbs li a {
+    
+    display: block;
+    color: #fff;
+}
+
+/* contents 영역 */
+#contents {
+    padding: 100px 0px 150px;
+}
+
+#contents h2 {
+    padding-bottom: 10px;
+    font-size: 30px;
+    text-align: center;
+}
+
+#contents p {
+    padding-bottom: 40px;
+    font-size: 15px;
+    color: #999;
+    text-align: center;
+}
+
+#contents .pos {
+    position: relative;
+}
+
+#contents .imgHomelap {
+    width: 1200px;
+    height: 500px;
+}
+
+#contents .subTitle {
+    padding: 50px;
+    width: 400px;
+    height: 245px;
+    background: #006466;
+    position: absolute;
+    left: 50px;
+    top: 455px;
+}
+
+#contents .subTitle h3 {
+    padding-bottom: 40px;
+    font-size: 25px;
+    font-weight: 700;
+    color: #fff;
+}
+
+#contents .subTitle h4 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #7fb1b2;
+}
+
+#contents .intro {
+    padding: 50px 55px;
+    width: 750px;
+    height: 200px;
+    float: right;
+    /* background: #ff0; */
+}
+
+#contents .intro dt {
+    padding-bottom: 20px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #1b9c9e;
+}
+
+#contents .intro dd {
+    font-size: 15px;
+    color: #666;
+}
+
+/* footer 영역 */
+#footer {
+    background: #333;
+}
+
+#footer .inner {
+    height: 250px;
+    position: relative;
+}
+
+#footer .footerLogo {
+    position: absolute;
+    left: 0px;
+    top: 50px;
+}
+
+#footer .footerLink {
+    position: absolute;
+    right: 0px;
+    top: 40px;
+}
+
+#footer .footerLink li {
+    float: left;
+}
+
+#footer .footerLink li a {
+    margin-right: 20px;
+    display: block;
+    font-size: 15px;
+    color: #999;
+}
+
+#footer .footerLink li:nth-child(4) a {
+    margin-right: 0px;
+}
+
+#footer address {
+    font-size: 15px;
+    font-style: normal;
+    color: #666;
+    position: absolute;
+    left: 0px;
+    top: 125px;
+}
+
+#footer .copy {
+    font-size: 15px;
+    color: #666;
+    position: absolute;
+    left: 0px;
+    top: 150px;
+}
+
+#footer .sns {
+    position: absolute;
+    right: 0px;
+    top: 125px;
+}
+
+#footer .sns li {
+    float: left;
+}
+
+
+
+

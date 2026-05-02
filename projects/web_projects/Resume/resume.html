@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>강건우 | Design Resume</title>
+    <link rel="stylesheet" href="./css/common.css" type="text/css">
+    <link rel="stylesheet" href="./css/main.css" type="text/css">
+
+    <script src="./js/jquery-3.6.0.min.js" type="text/javascript"></script>
+    <script>
+        $(document).ready(function () {
+            document.addEventListener('contextmenu', function (event) {
+                return event.preventDefault();
+            });
+            document.addEventListener('keydown', function (event) {
+                if (event.keyCode == 123) {
+                    event.preventDefault();
+                    event.returnValue = false;
+
+                }
+                else if (event.keyCode == 17) {
+                    event.preventDefault();
+                    event.returnValue = false;
+
+                }
+                else if (event.keyCode == 16) {
+                    event.preventDefault();
+                    event.returnValue = false;
+
+                }
+                else if (event.keyCode == 74) {
+                    event.preventDefault();
+                    event.returnValue = false;
+
+                }
+                else if (event.keyCode == 73) {
+                    event.preventDefault();
+                    event.returnValue = false;
+
+                }
+                else if (event.keyCode == 67) {
+                    event.preventDefault();
+                    event.returnValue = false;
+
+                }
+            });
+        });
+    </script>
+
+</head>
+
+<body>
+    <div id="wrap">
+        <div class="inner">
+            <div class="resume">
+                <img src="./images/Resume1.jpg" alt="Design Resume1 image">
+            </div>
+
+            <div class="resume">
+                <img src="./images/Resume4.jpg" alt="Design Resume4 image">
+            </div>
+
+            <div class="resume">
+                <img src="./images/Resume5.jpg" alt="Design Resume5 image">
+            </div>
+
+            <div class="resume">
+                <img src="./images/Resume2.jpg" alt="Design Resume2 image">
+            </div>
+
+            <div class="resume">
+                <img src="./images/Resume3.jpg" alt="Design Resume3 image">
+            </div>
+            
+        </div>  <!-- inner end -->
+    </div> <!-- wrap end -->
+</body>
+
+</html>

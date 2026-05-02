@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포트폴리오용 반응형웹 WebGL 예제</title>
+
+    <link rel="stylesheet" href="./css/common.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/ani.css" type="text/css">
+    <link rel="stylesheet" href="./css/sub.css" type="text/css">
+
+    <script src="./js/jquery-3.6.0.min.js" type="text/javascript"></script>
+    <script src="./js/WebGL.js" type="text/javascript"></script>
+    <script src="./js/example.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+            <nav>
+                <div class="inner">
+                    <h1><a href="./main.html"><img src="./images/radioactive.svg" alt="radioactive logo"></a></h1>
+
+                    <ul class="gnb">
+                        <li><a href="./sub.html">Dysprosium</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="./doc/WebGL_Copyrights.pdf" target="_blank">Copyrights</a></li>
+                    </ul>
+
+                    <div class="mmenu"></div>
+                </div> <!-- inner end -->
+            </nav>
+
+            <div class="wrapMgnb">
+                <ul class="mgnb">
+                    <li><a href="#">Dysprosium</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="./doc/WebGL_Copyrights.pdf" target="_blank">Copyrights</a></li>
+                </ul>
+            </div> <!-- wrapMgnb end -->
+        </header> <!-- header end -->
+
+        <section id="first">
+            <div class="inner">
+                <h2>Dysprosium</h2>
+
+                <ul class="dyList">
+                    <li><span>개요</span></li>
+                    <li><a href="#second">전자껍질</a></li>
+                    <li><a href="#third">물리적 성질</a></li>
+                </ul>
+            </div> <!-- inner end -->
+
+            <div class="innerDy">
+                <img src="./images/Dy_chips.jpg" alt="Dysprosium Chips image">
+
+                <dl>
+                    <dt>Dysprosium</dt>
+                    <dd class="ani_stop ani-start-fadeDown">
+                        란타넘족에 속하는 희토류 원소이다.<br>
+                        화학 원소로 기호는 Dy,<br class="tnone"> 원자 번호는 66이다.<br>
+                        희토류 원소 중 자성이 강한 원소이다. <br class="tnone"> 또한 구하기 힘든 희토류이다.
+                    </dd>
+                </dl>
+            </div> <!-- innerDy -->
+        </section> <!-- first end -->
+
+        <section id="second">
+            <div class="innerDy">
+                <div class="imgDy">
+                    <h2>디스프로슘의 전자껍질</h2>
+                    <img class="ani_stop ani-start-fadeDown" src="./images/Electron_shell_066_Dysprosium_-_no_label.svg" alt="Dysprosium Shell image">
+                </div> <!-- imgDy end -->
+            </div> <!-- innerDy -->
+        </section> <!-- second end -->
+
+        <section id="third">
+            <div class="innerDy">
+                <h2>물리적 성질</h2>
+                <div class="box">
+                    <div class="thrBox ani_stop ani-start-fadeLeft ani-delay-03">
+                        <dl>
+                            <dt>겉보기</dt>
+                            <dd>은백색</dd>
+                        </dl>
+                    </div> <!-- thrBox -->
+
+                    <div class="thrBox ani_stop ani-start-fadeLeft ani-delay-05">
+                        <dl>
+                            <dt>상태 (STP)</dt>
+                            <dd>고체</dd>
+                        </dl>
+                    </div> <!-- thrBox -->
+
+                    <div class="thrBox ani_stop ani-start-fadeLeft ani-delay-07">
+                        <dl>
+                            <dt>녹는점</dt>
+                            <dd>1680 K</dd>
+                        </dl>
+                    </div> <!-- thrBox -->
+
+                    <div class="thrBox ani_stop ani-start-fadeLeft ani-delay-09">
+                        <dl>
+                            <dt>끓는점</dt>
+                            <dd>2840 K</dd>
+                        </dl>
+                    </div> <!-- thrBox -->
+
+                    <div class="thrBox ani_stop ani-start-fadeLeft ani-delay-11">
+                        <dl>
+                            <dt>밀도</dt>
+                            <dd>8.540 g/cm<sup>3</sup></dd>
+                        </dl>
+                    </div> <!-- thrBox -->
+                </div> <!-- box end -->
+            </div> <!-- inner end -->
+        </section> <!-- third end -->
+    </div> <!-- wrap end -->
+</body>
+
+</html>

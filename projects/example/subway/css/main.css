@@ -1,0 +1,108 @@
+@charset "utf-8";
+
+
+@keyframes bg {
+	0% { background-position:70px 35px; }
+	50% { background-position:70px 30px; }
+	100% { background-position:70px 35px; }
+}
+
+
+/* 상단 영역 */
+#header { border-top:5px solid #009132; }
+#header .inner { height:170px; position:relative; z-index:999; }
+#header h1 { position:absolute; left:50%; top:30px; transform: translateX(-50%); }
+
+#header .gnb { position:absolute; top:100px; left:50%; transform:translateX(-50%); width: 80%; }
+#header .gnb > li { float:left; width:calc(100%/5); }
+#header .gnb > li > a { display:block; font-size:20px; font-weight:600; text-align:center; padding:15px 0 25px; }
+#header .gnb > li:hover > a { color:#009132; }
+
+
+#header .gnb li:hover .dp2 { display:block; }
+#header .gnb .dp2 { display:none; padding:15px 0; background:#009132;  }
+#header .gnb .dp2 li a { transition:color 0.5s; display:block; font-size:14px; padding:3px 0; text-align:center; color:#FFF; }
+#header .gnb .dp2 li a:hover { color:#ffce32; }
+
+#header .util { position:absolute; right:0; top:40px; }
+#header .util li { float:left; padding-left:10px; margin-left:10px; position:relative; }
+#header .util li:not(:first-child):before { content: ''; width: 1px; height: 10px; background: #ccc; position: absolute; left: 0; top: 8px; transform:skewX(-10deg); }
+#header .util li a { display:block; color:#999; transition:color 0.5s; }
+#header .util li a:hover { color:#000; }
+
+
+
+
+
+/* 메인 비주얼 */
+#main_banner { height:490px; position:relative; }
+
+#main_banner .ban {
+	max-width: 1920px;
+	height: 440px;
+	margin: 0 auto;
+}
+
+#main_banner .quick_link { position:absolute; left:50%; bottom:0; }
+#main_banner .quick_link li { float:left; }
+#main_banner .quick_link li a { display:block; padding:30px 70px 30px 120px; font-size:24px; font-weight:bold; }
+#main_banner .quick_link li:nth-child(1) a { background:#ffce32 url(../images/icon_map.png) no-repeat 70px 35px; border-radius:30px 0 0 0; }
+#main_banner .quick_link li:nth-child(1) a:hover { animation:bg 0.7s infinite; }
+#main_banner .quick_link li:nth-child(2) a { background:#009223 url(../images/icon_franchise.png) no-repeat 70px 35px; border-radius:0 0 30px 0; color:#FFF; }
+#main_banner .quick_link li:nth-child(2) a:hover { animation:bg 0.7s infinite; }
+
+
+
+/* 서브웨이 메뉴 */
+#menu { padding:100px 0; }
+#menu h2:before { content: ''; width: 60px; height: 60px; background: #ffce32; position: absolute; left: 0; top: 0; z-index: -1; border-radius: 30px 30px 0 30px; }
+#menu h2 { font-size:40px; padding:25px 25px 50px; font-family:'Poppins'; position: relative; }
+#menu ul li { float:left; width:calc(100%/4); text-align:center; transition:all 0.5s; position:relative; }
+#menu ul li:hover { transform:scale(1.1,1.1); }
+#menu ul li a:after { transition:opacity 0.5s; content:''; background:url('../images/btn_more.png') no-repeat; position:absolute; left:calc(50% - 40px); top:90px; width:98px; height:98px; opacity:0; }
+#menu ul li:hover a:after { opacity:1; } 
+#menu ul .tit { font-size:20px; font-weight:bold; }
+#menu ul .desc { color:#999; padding-top:15px; }
+
+
+
+/* 프랜차이즈 영역 */
+#franchise { background:url(../images/franchise_bg.jpg) no-repeat center center fixed; background-size: cover; text-align:center; color:#FFF; padding: 100px 0; }
+#franchise h2 { font-size:40px; font-family:'Poppins'; padding-bottom:30px; }
+#franchise .comment { opacity:0.7; }
+#franchise a { display:inline-block; border:2px solid #FFF; padding:10px 50px; color:#FFF; transition:background 0.5s; margin-top:30px; border-radius:50px; }
+#franchise a:hover { background:#FFF; color:#000; }
+
+
+
+/* 가이드 영역 */
+#guide { background:url(../images/bg_contents.gif); padding:100px 0; }
+#guide .method { float:left; width:400px; height:300px; background:#01a5e2 url(../images/bg_method.png) no-repeat 180px 80px; border-radius:30px 0 30px 30px; padding: 50px; transition:transform 0.5s; }
+#guide .history { float:right; width:770px; height:300px; background:#ff8300 url(../images/bg_history.jpg) no-repeat; border-radius:30px 0 30px 0; padding:50px 50px 50px 420px; transition:transform 0.5s; }
+#guide article:hover { transform:translate(5px,5px); box-shadow:5px 5px 10px rgba(0,0,0,0.2); }
+#guide h3 { color:#FFF; font-size:24px; font-weight:600; padding-bottom:30px; }
+#guide .btn a { transition:background 0.5s; display:inline-block; padding:8px 40px; border:2px solid #FFF; border-radius:30px; color:#FFF; }
+#guide .btn a:hover { background:#fff; color:#000; }
+
+
+
+
+/* 하단 영역 */
+#footer { background:#333; padding: 60px 0; }
+#footer .inner { height:120px; position:relative; }
+#footer .foot_link { position:absolute; left:0; top:0; }
+#footer .foot_link li { float:left; padding-right:20px; }
+#footer .foot_link li a { color:#ccc; }
+#footer .foot_link li a:hover { color:#FFF; }
+#footer address { position:absolute; left:0; top:60px; color:#666; white-space:pre; }
+#footer .copy { position:absolute; left:0; top:85px; color:#666; }
+#footer .sns { position:absolute; right:0; top:0; }
+#footer .sns li { float:left; padding-left:10px; }
+#footer .sns li a { opacity:0.5; transition:opacity 0.5s; }
+#footer .sns li a:hover { opacity:1; }
+
+
+.gotop { position: fixed; right: 50px; bottom: 50px; display: inline-block; color: #fff; text-transform: uppercase; background: rgba(0,0,0,0.2) url('../images/gotop.png') no-repeat center center; width: 70px; height: 70px; border-radius: 50%; text-align: center; padding-top: 30px; text-indent: -9999px; }
+
+
+

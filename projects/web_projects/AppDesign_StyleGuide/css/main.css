@@ -1,0 +1,394 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
+@import url('http://fonts.cdnfonts.com/css/sf-pro-display');
+
+                
+/* h1 */
+body h1 {
+    padding: 120px 0px 50px;
+    font-size: 40px;
+    font-weight: 700;
+    color: #babf17;
+}
+
+/* contents */
+body .contents {
+    padding: 0px 90px;
+}
+
+/* top */
+#top img {
+    margin: 0px auto;
+    display: block;
+    line-height: 0px;
+}
+
+/* overview */
+#overview {
+    /* padding: 353px 0px; */
+    height: 969px;
+    background: url("../images/OverView_Bg.png") no-repeat center center;
+}
+
+#overview dl dt {
+    padding-bottom: 58px;
+    font-size: 50px;
+    font-weight: 700;
+    color: #babf17;
+}
+
+#overview dl dd {
+    font-size: 16px;
+    font-weight: 700;
+    color: #333;
+    line-height: 1.8;
+}
+
+#overview .ovLogo {
+    padding-top: 210px;
+}
+
+#overview .ovLogo p {
+    padding-top: 30px;
+    font-size: 30px;
+    font-weight: 700;
+    color: #fff;
+}
+
+/* brainStorming */
+#brainStorming {
+    height: 969px;
+}
+
+#brainStorming img {
+    margin: 0px auto;
+    display: block;
+    line-height: 0px;
+}
+
+/* moodBoard */
+#moodBoard {
+    height: 944px;
+    background: #f1f1f1;
+}
+
+#moodBoard h1 {
+    padding-bottom: 145px;
+}
+
+#moodBoard .mb {
+    /* padding: 0px 90px; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* persona */
+#persona {
+    height: 969px;
+    background: #fff;
+}
+
+#persona .contents {
+    display: flex;
+    /* flex-wrap: wrap; */
+    flex-direction: column;
+}
+
+#persona .a1 {
+    padding: 50px 0px;
+    align-self: flex-end;
+}
+
+#persona .a2 {
+    padding-top: 50px;
+    align-self: flex-end;
+}
+
+/* ujm */
+#ujm {
+    height: 1172px;
+    background: #f1f1f1;
+}
+
+/* concept */
+#concept {
+    height: 906px;
+    background: #fff;
+}
+
+#concept .contents {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+#concept .color {
+    width: 50%;
+}
+
+#concept .color .colorMain {
+    padding-bottom: 50px;
+}
+
+#concept .typo {
+    width: 50%;
+    height: 100%;
+}
+
+#concept .color h1 {
+    margin-left: -90px;
+}
+
+#concept .typo dl dt {
+    padding-bottom: 70px;
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 1.6;
+    color: #555;
+}
+
+#concept .typo dl dd.sfpro {
+    font-family: 'SF Pro Display', sans-serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: #555;
+}
+
+#concept .typo dl dd.nanum {
+    font-size: 25px;
+    font-weight: 700;
+    color: #555;
+}
+
+/* logo */
+#logo {
+    height: 667px;
+    background: #f1f1f1;
+}
+
+#logo p {
+    padding-bottom: 80px;
+    font-size: 35px;
+    font-weight: 700;
+    color: #333;
+}
+
+#logo .contents {
+    padding: 0px 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logo .contents .rightLogo {
+    padding-right: 185px;
+}
+
+/* wireframe */
+#wireframe {
+    height: 1377px;
+    background: #fff;
+}
+
+#wireframe h1 {
+    padding-bottom: 120px;
+}
+
+/* userflow */
+#uf {
+    height: 3100px;
+    background: #fff;
+}
+
+#uf img {
+    margin: 0px auto;
+    display: block;
+}
+
+/* splog */
+#splog {
+    height: 990px;
+    background: #f1f1f1;
+}
+
+#splog .inner {
+    text-align: center;
+}
+
+/* walkthrough */
+#walkthr {
+    height: 960px;
+    text-align: center;
+    background: #f1f1f1;
+    position: relative;
+}
+
+#walkthr .bg {
+    width: 100%;
+    height: 50%;
+    /* height: 530px; */
+    background: #babf17;
+    position: absolute;
+    left: 0px;
+    top: 35%;
+    z-index: 1;
+}
+
+#walkthr img {
+    margin: 0px auto;
+    display: block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 99999;
+}
+
+/* home */
+#home {
+    height: 2270px;
+    background: #333532;
+    text-align: center;
+}
+
+#home p {
+    padding-bottom: 100px;
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 1.8;
+    color: #ddd;
+}
+
+#home .homeTop {
+    padding-bottom: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#home .homeBottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* myloc */
+#myloc {
+    height: 1210px;
+    background: #f1f1f1;
+    text-align: center;
+    position: relative;
+}
+
+#myloc .topBg {
+    width: 100%;
+    height: 418px;
+    background: url("../images/My_Location_Top_Bg.png") no-repeat center center;
+}
+
+#myloc h1 {
+    padding-top: 100px;
+}
+
+#myloc p {
+    padding-bottom: 68px;
+    font-size: 25px;
+    font-weight: 700;
+    color: #ddd;
+}
+
+#myloc .contents {
+    position: absolute;
+    left: 50%;
+    top: 26%;
+    transform: translateX(-50%);
+}
+
+/* searchBus */
+#searchBus {
+    height: 3610px;
+    background: #ddd;
+    text-align: center;
+    position: relative;
+}
+
+#searchBus .topBg {
+    width: 100%;
+    height: 459px;
+    background: url("../images/SearchBus_Top_Bg.png") no-repeat center center;
+}
+
+#searchBus h1 {
+    padding-top: 100px;
+}
+
+#searchBus p {
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 1.8;
+    color: #ddd;
+}
+
+#searchBus .contents {
+    padding-top: 120px;
+}
+
+/* busStop */
+#busStop {
+    height: 2171px;
+    background: #f1f1f1;
+    text-align: center;
+    position: relative;
+}
+
+#busStop .topBg {
+    width: 100%;
+    height: 489px;
+    background: url("../images/BusStop_Top_Bg.png") no-repeat center center;
+}
+
+#busStop h1 {
+    padding-top: 100px;
+}
+
+#busStop p {
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 1.7;
+    color: #ddd;
+}
+
+#busStop .contents {
+    padding-top: 100px;
+}
+
+/* favorite */
+#favorite {
+    height: 2084px;
+    background: url("../images/Favorite_Bg.png") no-repeat center center;
+    text-align: center;
+}
+
+#favorite h1 {
+    padding-bottom: 100px;
+}
+
+#favorite .contents .topFav {
+    padding-bottom: 100px;
+}
+
+/* mockup */
+#mockup {
+    height: 1353px;
+    background: #fff;
+    text-align: center;
+}
+
+#mockup h1 {
+    padding-bottom: 120px;
+}
+
+#mockup img {
+    margin: 0px auto;
+    display: block;
+}

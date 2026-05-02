@@ -1,0 +1,107 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* header{display: none;} */
+
+header{
+    position: relative;
+    z-index: 10000;
+}
+
+h1{
+    position: fixed;/*window를 기준으로 위치를 잡는 값*/
+    top: 50px;
+    left: 50px;
+}
+
+h1 img{
+    width: 200px;/*이미지는 항상 비율을 유지함.*/
+}
+
+.gnb{
+    position: fixed;
+    top: 300px;
+    left: 0;
+}
+
+.gnb li{
+    width: 250px;
+    /* background-color: teal; */
+    text-align: right;
+    padding: 20px 10px;
+    border-top: 1px solid #000;
+}
+
+main section{
+    height: 100vh;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;/*자신이 있던 위치에서 위치를 지정*/
+}
+
+main .s1{background-image: url(../images/bg1.jpg);}
+main .s2{background-image: url(../images/bg2.jpg);}
+main .s3{background-image: url(../images/bg3.jpg);}
+main .s4{background-image: url(../images/bg4.jpg);}
+
+.gnb li:nth-child(1).on {
+    color: magenta;
+    border-color: magenta;
+}
+
+.gnb li:nth-child(2).on {
+    color: #fff;
+    border-color: #fff;
+}
+
+.gnb li:nth-child(3).on {
+    color: darksalmon;
+    border-color: darksalmon;
+}
+
+.gnb li:nth-child(4).on {
+    color: dodgerblue;
+    border-color: dodgerblue;
+}
+
+section .txt{
+    position: absolute;/*부모 중에서 포지션 값을 갖는 요소를 기준으로 위치를 잡음..*/
+    left: 300px;
+    top: 50%;/*부모 높이의 절반에 요소의 머리를 맞춤*/
+    transform: translateY(-50%);/*자신의 높이값의 절반만큼 -방향으로 이동(왜곡) */
+}
+
+main .s1 .txt {
+    color:palevioletred;
+}
+
+main .s2 .txt {
+    color: papayawhip;
+}
+
+main .s3 .txt {
+    color: darksalmon;
+}
+
+main .s4 .txt {
+    color: dodgerblue;
+}
+
+.p11{bottom:20px; right:20px;}
+.p12{bottom:-40px; right:130px;}
+.p13{bottom:140px; right:60px;}
+
+.p21{bottom:-480px; right:-180px;}
+.p22{bottom:-40px; right:130px;}
+
+.p31{bottom:30px; right:180px;}
+.p32{bottom:-270px; right:110px;}
+.p33{bottom:-130px; right:-70px;}
+
+.p41{bottom:-120px; right:20px;}
+.p42{bottom:-180px; right:0px;}

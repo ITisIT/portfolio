@@ -1,0 +1,262 @@
+@charset "utf-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #000;
+}
+
+/* inner 영역 */
+.inner {
+    margin: 0px auto;
+    width: 1200px;
+}
+
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/* header 영역 */
+#header {
+    margin: 0 auto;
+    width: 1200px;
+    height: 150px;
+    position: relative;
+}
+
+#header li {
+    float: left;
+}
+
+#header .site {
+    position: absolute;
+    left: 0px;
+    top: 20px;
+}
+
+#header .site li:nth-child(1) a {
+    padding: 5px 20px;
+    display: block;
+    color: #fff;
+    background: #1d326c;
+    border: 1px solid #1d326c;
+}
+
+#header .site li:nth-child(2) a {
+    padding: 5px 20px;
+    display: block;
+    color: #1d326c;
+    border: 1px solid #1d326c;
+}
+
+#header .util {
+    position: absolute;
+    right: 150px;
+    top: 20px;
+}
+
+#header .util li {
+    margin-left: 20px;
+}
+
+#header .util li a {
+    color: #999;
+}
+
+#header .sns {
+    position: absolute;
+    right: 0px;
+    top: 20px;
+}
+
+#header .sns li {
+    margin-left: 5px;
+}
+
+#header h1 {
+    position: absolute;
+    left: 0px;
+    top: 90px;
+}
+
+#header .gnb {
+    position: absolute;
+    right: 0px;
+    top: 90px;
+}
+
+#header .gnb li a {
+    padding: 10px 30px;
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+/* subVisual 영역 */
+#subVisual {
+    padding: 150px 0px 50px;
+    background: url("../images/drink_visual.jpg") no-repeat center top;
+}
+
+#subVisual h2 {
+    /* padding: 150px 0px 20px; */
+    font-size: 50px;
+    font-weight: 400;
+    text-align: center;
+    color: #fff;
+}
+
+#subVisual .comment {
+    padding: 20px 0px 100px;
+    font-size: 18px;
+    text-align: center;
+    color: #fff;
+}
+
+#subVisual .lnb li {
+    width: calc(100% / 6);
+    /* .clearfix::after */
+    float: left;
+}
+
+#subVisual .lnb li a {
+    margin-right: 5px;
+    padding: 10px 20px;
+    display: block;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#subVisual .lnb li:last-child a {
+    margin-right: 0px;
+}
+
+#subVisual .lnb li a:hover, #subVisual .lnb li a.on {
+    background: #1d326c;
+}
+
+/* contents 영역 */
+#contents {
+    /* .inner 적용 */
+    padding: 100px 0px;
+}
+
+#contents .subTitle {
+    /* .clearfix::after */
+    margin-bottom: 50px;
+    padding-bottom: 10px;
+    background: url("../images/patten.jpg") repeat-x 0px bottom;
+}
+
+#contents .subTitle h3 {
+    float: left;
+    font-size: 30px;
+}
+
+#contents .subTitle .breadcrumbs {
+    float: right;
+    padding-top: 10px;
+}
+
+#contents .subTitle .breadcrumbs li {
+    margin-left: 10px;
+    padding-left: 10px;
+    float: left;
+    background: url("../images/breadcrumbs_arrow.png") no-repeat 0px 10px;
+}
+
+#contents .subTitle .breadcrumbs li:first-child {
+    padding-left: 20px;
+    background: url("../images/home.png") no-repeat 0px 7px;
+}
+
+/* #contents .drinkMenu -> .clearfix::after */
+#contents .drinkMenu li {
+    width: calc(100% / 4);
+    float: left;
+    text-align: center;
+}
+
+#contents .drinkMenu li a {
+    margin: 0px 10px 10px 0px;
+    padding: 50px 0px;
+    display: block;
+    background: #eee;
+}
+
+#contents .drinkMenu li a:hover {
+    color: #fff;
+    background: #1d326c;
+}
+
+#contents .drinkMenu li:nth-child(4n) a {   /* 4의 배수 */
+    margin-right: 0px;
+}
+
+/* footer 영역 */
+#footer {
+    background: #262626;
+}
+
+#footer .inner {
+    height: 250px;
+    position: relative;
+}
+
+#footer .footerLogo {
+    position: absolute;
+    left: 0px;
+    top: 40px;
+}
+
+#footer .footerLink {
+    position: absolute;
+    right: 0px;
+    top: 40px;
+}
+
+#footer .footerLink li {
+    padding-left: 20px;
+    float: left;
+}
+
+#footer .footerLink li a {
+    color: #999;
+}
+
+#footer address {
+    position: absolute;
+    left: 0px;
+    top: 100px;
+    font-style: normal;
+    color: #666;
+}
+
+#footer .copy {
+    position: absolute;
+    left: 0px;
+    top: 150px;
+    color: #666;
+}

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>포트폴리오용 Modal PopUp Gallery</title>
+    <style>
+        #container {
+            width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .col {
+            width: 32%;
+        }
+
+        .col .box {
+            width: 100%;
+            margin-bottom: 30px
+        }
+
+        .col .box img {
+            width: 100%;
+            height: auto;
+        }
+
+        .pop {
+            position: fixed;
+            /*window에 위치를 고.정.*/
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            display: none;
+        }
+
+        .pop figure {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .pop figure img {
+            max-width: 1300px;
+            max-height: 600px;
+        }
+
+        .close {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div class="col">
+            <div class="box">
+                <img src="./image/picture1.jpg" alt="">
+            </div>
+            <div class="box">
+                <img src="./image/picture2.jpg" alt="">
+            </div>
+            <div class="box">
+                <img src="./image/picture3.jpg" alt="">
+            </div>
+        </div>
+        <div class="col">
+            <div class="box">
+                <img src="./image/picture4.jpg" alt="">
+            </div>
+            <div class="box">
+                <img src="./image/picture5.jpg" alt="">
+            </div>
+            <div class="box">
+                <img src="./image/picture6.jpg" alt="">
+            </div>
+        </div>
+        <div class="col">
+            <div class="box">
+                <img src="./image/picture7.jpg" alt="">
+            </div>
+            <div class="box">
+                <img src="./image/picture8.jpg" alt="">
+            </div>
+            <div class="box">
+                <img src="./image/picture9.jpg" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="pop">
+        <div class="close"></div>
+        <figure></figure>
+    </div>
+
+
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+
+        // thumbnail 클릭하면, modal popup으로 
+        // 이미지 확장시키기
+
+        $(".box").on("click", function () {
+            var src = $(this).html();
+
+            $(".pop").fadeIn();
+            $(".pop figure").html(src);
+        });
+
+        $(".close").on("click", function () {
+            $(".pop").fadeOut();
+        })
+    </script>
+
+
+
+
+</body>
+
+</html>

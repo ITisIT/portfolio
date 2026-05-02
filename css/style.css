@@ -149,6 +149,11 @@ a:not([href]):not([tabindex]) {
   a:not([href]):not([tabindex]):focus {
     outline: 0; }
 
+a.copyrightAll:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.6);
+}
+
 pre,
 code,
 kbd,
