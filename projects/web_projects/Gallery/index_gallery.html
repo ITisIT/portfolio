@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -49,7 +50,16 @@
 		/* =========================
 			 HEADER
 		========================= */
-		.scroll-progress { position: fixed; top:0; left:0; width:0; height:2px; background:#fff; z-index:200; pointer-events:none; }
+		.scroll-progress {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 0;
+			height: 2px;
+			background: #fff;
+			z-index: 200;
+			pointer-events: none;
+		}
 
 		.header {
 			width: 100%;
@@ -104,6 +114,12 @@
 			cursor: pointer;
 			font-size: 21px;
 			line-height: 1;
+			position: relative;
+			z-index: 31;
+		}
+
+		.mobile-nav {
+			display: none;
 		}
 
 		/* =========================
@@ -204,7 +220,7 @@
 			min-height: 100%;
 			display: block;
 			object-fit: cover;
-			transition: transform .7s cubic-bezier(.2,.7,.2,1), filter .5s ease;
+			transition: transform .7s cubic-bezier(.2, .7, .2, 1), filter .5s ease;
 		}
 
 		.photo:hover img {
@@ -216,7 +232,7 @@
 			content: "";
 			position: absolute;
 			inset: 0;
-			background: linear-gradient(to top, rgba(0,0,0,.55), transparent 35%);
+			background: linear-gradient(to top, rgba(0, 0, 0, .55), transparent 35%);
 			opacity: 0;
 			transition: opacity .3s ease;
 			pointer-events: none;
@@ -250,18 +266,66 @@
 		}
 
 		/* Asymmetric editorial layout */
-		.p1 { grid-column: span 5; grid-row: span 2; aspect-ratio: 4 / 5; }
-		.p2 { grid-column: span 3; aspect-ratio: 1 / 1; }
-		.p3 { grid-column: span 4; aspect-ratio: 4 / 3; }
-		.p4 { grid-column: span 4; aspect-ratio: 4 / 3; }
-		.p5 { grid-column: span 3; aspect-ratio: 1 / 1; }
-		.p6 { grid-column: span 5; aspect-ratio: 5 / 3; }
-		.p7 { grid-column: span 3; aspect-ratio: 3 / 4; }
-		.p8 { grid-column: span 4; aspect-ratio: 4 / 3; }
-		.p9 { grid-column: span 5; aspect-ratio: 5 / 4; }
-		.p10 { grid-column: span 3; aspect-ratio: 1 / 1; }
-		.p11 { grid-column: span 4; aspect-ratio: 4 / 5; }
-		.p12 { grid-column: span 5; aspect-ratio: 5 / 3; }
+		.p1 {
+			grid-column: span 5;
+			grid-row: span 2;
+			aspect-ratio: 4 / 5;
+		}
+
+		.p2 {
+			grid-column: span 3;
+			aspect-ratio: 1 / 1;
+		}
+
+		.p3 {
+			grid-column: span 4;
+			aspect-ratio: 4 / 3;
+		}
+
+		.p4 {
+			grid-column: span 4;
+			aspect-ratio: 4 / 3;
+		}
+
+		.p5 {
+			grid-column: span 3;
+			aspect-ratio: 1 / 1;
+		}
+
+		.p6 {
+			grid-column: span 5;
+			aspect-ratio: 5 / 3;
+		}
+
+		.p7 {
+			grid-column: span 3;
+			aspect-ratio: 3 / 4;
+		}
+
+		.p8 {
+			grid-column: span 4;
+			aspect-ratio: 4 / 3;
+		}
+
+		.p9 {
+			grid-column: span 5;
+			aspect-ratio: 5 / 4;
+		}
+
+		.p10 {
+			grid-column: span 3;
+			aspect-ratio: 1 / 1;
+		}
+
+		.p11 {
+			grid-column: span 4;
+			aspect-ratio: 4 / 5;
+		}
+
+		.p12 {
+			grid-column: span 5;
+			aspect-ratio: 5 / 3;
+		}
 
 		/* =========================
 			 FOOTER
@@ -296,7 +360,7 @@
 		.lightbox {
 			position: fixed;
 			inset: 0;
-			background: rgba(0,0,0,.94);
+			background: rgba(0, 0, 0, .94);
 			z-index: 100;
 			display: none;
 			align-items: center;
@@ -342,8 +406,13 @@
 			opacity: .75;
 		}
 
-		.lightbox-prev { left: 15px; }
-		.lightbox-next { right: 15px; }
+		.lightbox-prev {
+			left: 15px;
+		}
+
+		.lightbox-next {
+			right: 15px;
+		}
 
 		.lightbox-prev:hover,
 		.lightbox-next:hover {
@@ -380,6 +449,55 @@
 				display: block;
 			}
 
+			.mobile-nav {
+				position: fixed;
+				inset: 0;
+				z-index: 30;
+
+				background: rgba(8, 8, 8, .98);
+
+				padding: 110px 8vw 50px;
+
+				flex-direction: column;
+				gap: 24px;
+			}
+
+			.mobile-nav.open {
+				display: flex;
+			}
+
+			.mobile-nav a {
+				color: #777;
+
+				font-size: clamp(34px, 9vw, 58px);
+				line-height: 1;
+
+				letter-spacing: -.05em;
+				font-weight: 700;
+
+				transition: color .2s ease;
+			}
+
+			.mobile-nav a:hover,
+			.mobile-nav a.active {
+				color: #fff;
+			}
+
+			.mobile-nav .mobile-back {
+				margin-top: 25px;
+				padding-top: 25px;
+
+				border-top: 1px solid #292929;
+
+				font-size: 12px;
+				font-weight: 400;
+				letter-spacing: 0;
+			}
+
+			body.menu-open {
+				overflow: hidden;
+			}
+
 			.hero {
 				padding: 70px 5vw 45px;
 				display: block;
@@ -412,8 +530,18 @@
 			}
 
 			.photo,
-			.p1, .p2, .p3, .p4, .p5, .p6,
-			.p7, .p8, .p9, .p10, .p11, .p12 {
+			.p1,
+			.p2,
+			.p3,
+			.p4,
+			.p5,
+			.p6,
+			.p7,
+			.p8,
+			.p9,
+			.p10,
+			.p11,
+			.p12 {
 				grid-column: span 1;
 				aspect-ratio: 4 / 5;
 			}
@@ -445,7 +573,7 @@
 
 		@media (max-width: 520px) {
 			.hero-title {
-				font-size: 19vw;
+				font-size: 17vw;
 			}
 
 			.hero-copy {
@@ -457,8 +585,18 @@
 			}
 
 			.photo,
-			.p1, .p2, .p3, .p4, .p5, .p6,
-			.p7, .p8, .p9, .p10, .p11, .p12 {
+			.p1,
+			.p2,
+			.p3,
+			.p4,
+			.p5,
+			.p6,
+			.p7,
+			.p8,
+			.p9,
+			.p10,
+			.p11,
+			.p12 {
 				min-height: 0;
 			}
 
@@ -483,8 +621,13 @@
 				font-size: 25px;
 			}
 
-			.lightbox-prev { left: 0; }
-			.lightbox-next { right: 0; }
+			.lightbox-prev {
+				left: 0;
+			}
+
+			.lightbox-next {
+				right: 0;
+			}
 
 			.lightbox-info {
 				left: 15px;
@@ -509,12 +652,25 @@
 			<!-- <a href="https://itisit.github.io/portfolio#about">About</a>
 			<a href="https://itisit.github.io/portfolio#projects">Projects</a> -->
 			<a href="#" class="active">Photography</a>
-			<a href="thailand.html">Thailand</a>
+			<a href="./index_thailand.html">Thailand</a>
 		</nav>
 
 		<a href="https://itisit.github.io/portfolio" class="back-link">Back to Portfolio →</a>
 
-		<button class="mobile-menu" aria-label="Open menu">☰</button>
+		<button class="mobile-menu" aria-label="Open menu" aria-expanded="false">
+			<span class="menu-icon">☰</span>
+		</button>
+
+		<nav class="mobile-nav" aria-label="Mobile navigation">
+			<!-- <a href="https://itisit.github.io/portfolio">Home</a>
+			<a href="https://itisit.github.io/portfolio#about">About</a>
+			<a href="https://itisit.github.io/portfolio#projects">Projects</a> -->
+			<a href="#" class="active">Photography</a>
+			<a href="./index_thailand.html">Thailand</a>
+			<a href="https://itisit.github.io/portfolio" class="mobile-back">
+				← Back to Portfolio
+			</a>
+		</nav>
 	</header>
 
 	<!-- HERO -->
@@ -547,244 +703,358 @@
 				예: images/photo01.jpg
 			-->
 
-			<article class="photo p6" data-category="iphone travel" data-index="0"
-							 data-title="Daejeon, Korea" data-device="iPhone 16 Pro / 2024.10">
+			<article class="photo p6" data-category="iphone travel" data-index="0" data-title="Daejeon, Korea"
+				data-device="iPhone 16 Pro / 2024.10">
 				<img src="./images/iphone_img01.WEBP" alt="Daejeon Shinsegae Art&Science">
 				<div class="photo-meta"><span>Daejeon, Korea</span><span>iPhone 16 Pro</span></div>
 			</article>
 
-			<article class="photo p4" data-category="iphone travel" data-index="1"
-							 data-title="Bangkok, Thailand" data-device="iPhone 12 Pro / 2024.04">
+			<article class="photo p4" data-category="iphone travel" data-index="1" data-title="Bangkok, Thailand"
+				data-device="iPhone 12 Pro / 2024.04">
 				<img src="./images/iphone_img02.WEBP" alt="The Quarter Ari by UHG">
 				<div class="photo-meta"><span>Bangkok, Thailand</span><span>iPhone 12 Pro</span></div>
 			</article>
 
-			<article class="photo p3" data-category="iphone daily" data-index="2"
-							 data-title="Daejeon, Korea" data-device="iPhone 16 Pro / 2025.06">
+			<article class="photo p3" data-category="iphone daily" data-index="2" data-title="Daejeon, Korea"
+				data-device="iPhone 16 Pro / 2025.06">
 				<img src="./images/iphone_img03.WEBP" alt="Daejeon Street">
 				<div class="photo-meta"><span>Daejeon, Korea</span><span>iPhone 16 Pro</span></div>
 			</article>
 
-			<article class="photo p3" data-category="iphone daily" data-index="3"
-							 data-title="Daejeon, Korea" data-device="iPhone 16 Pro / 2025.06">
+			<article class="photo p3" data-category="iphone daily" data-index="3" data-title="Daejeon, Korea"
+				data-device="iPhone 16 Pro / 2025.06">
 				<img src="./images/iphone_img04.WEBP" alt="Daejeon Street">
 				<div class="photo-meta"><span>Daejeon, Korea</span><span>iPhone 16 Pro</span></div>
 			</article>
 
-			<article class="photo p6" data-category="camera daily" data-index="4"
-							 data-title="Keyboard" data-device="Nikon Z50ii / 2025.8">
+			<article class="photo p6" data-category="camera daily" data-index="4" data-title="Keyboard"
+				data-device="Nikon Z50ii / 2025.8">
 				<img src="./images/camera_img01.WEBP" alt="Camera Test">
 				<div class="photo-meta"><span>Keyboard</span><span>Nikon Z50ii</span></div>
 			</article>
 
-			<article class="photo p3" data-category="camera travel" data-index="5"
-							 data-title="Gyeongju, Korea" data-device="Nikon Z50ii / 2025.11">
+			<article class="photo p3" data-category="camera travel" data-index="5" data-title="Gyeongju, Korea"
+				data-device="Nikon Z50ii / 2025.11">
 				<img src="./images/camera_img02.JPG" alt="Gyeongju Street">
 				<div class="photo-meta"><span>Gyeongju, Korea</span><span>Nikon Z50ii</span></div>
 			</article>
 
-			<article class="photo p7" data-category="iphone daily" data-index="6"
-							 data-title="Street" data-device="iPhone 16 Pro / 2026.07">
+			<article class="photo p7" data-category="iphone daily" data-index="6" data-title="Street"
+				data-device="iPhone 16 Pro / 2026.07">
 				<img src="./images/iphone_img05.JPG" alt="Just Street">
 				<div class="photo-meta"><span>Busan, Korea</span><span>iPhone 16 Pro</span></div>
 			</article>
 
-			<article class="photo p9" data-category="camera travel" data-index="7"
-							 data-title="Bridge" data-device="Nikon Z50ii / 2026.07">
+			<article class="photo p9" data-category="camera travel" data-index="7" data-title="Bridge"
+				data-device="Nikon Z50ii / 2026.07">
 				<img src="./images/camera_img03.png" alt="Busan Diamond Bridge">
 				<div class="photo-meta"><span>Busan, Korea</span><span>Nikon Z50ii</span></div>
 			</article>
 
-			<article class="photo p7" data-category="iphone daily" data-index="8"
-							 data-title="City Street" data-device="iPhone 16 Pro / 2026.08">
+			<article class="photo p7" data-category="iphone daily" data-index="8" data-title="City Street"
+				data-device="iPhone 16 Pro / 2026.08">
 				<img src="./images/iphone_img06.png" alt="City Street">
 				<div class="photo-meta"><span>Busan, Korea</span><span>iPhone 16 Pro</span></div>
 			</article>
 
-			<article class="photo p7" data-category="iphone daily" data-index="9"
-							 data-title="Moon" data-device="iPhone 16 Pro / 2026.08">
+			<article class="photo p7" data-category="iphone daily" data-index="9" data-title="Moon"
+				data-device="iPhone 16 Pro / 2026.08">
 				<img src="./images/iphone_img07.png" alt="Moon">
 				<div class="photo-meta"><span>Busan, Korea</span><span>iPhone 16 Pro</span></div>
 			</article>
 
-			<article class="photo p7" data-category="iphone daily" data-index="10"
-							 data-title="City Street" data-device="iPhone 16 Pro / 2026.08">
+			<article class="photo p7" data-category="iphone daily" data-index="10" data-title="City Street"
+				data-device="iPhone 16 Pro / 2026.08">
 				<img src="./images/iphone_img08.png" alt="City Street">
 				<div class="photo-meta"><span>Busan, Korea</span><span>iPhone 16 Pro</span></div>
 			</article>
 
-			<article class="photo p7" data-category="iphone daily" data-index="11"
-							 data-title="City Street" data-device="iPhone 16 Pro / 2026.09">
+			<article class="photo p7" data-category="iphone daily" data-index="11" data-title="City Street"
+				data-device="iPhone 16 Pro / 2026.09">
 				<img src="./images/iphone_img09.png" alt="City Street">
 				<div class="photo-meta"><span>Busan, Korea</span><span>iPhone 16 Pro</span></div>
 			</article>
 
-			<article class="photo p7" data-category="iphone daily" data-index="12"
-							 data-title="City Street" data-device="iPhone 16 Pro / 2026.09">
+			<article class="photo p7" data-category="iphone daily" data-index="12" data-title="City Street"
+				data-device="iPhone 16 Pro / 2026.09">
 				<img src="./images/iphone_img10.png" alt="City Street">
 				<div class="photo-meta"><span>Busan, Korea</span><span>iPhone 16 Pro</span></div>
 			</article>
 
-			<article class="photo p7" data-category="iphone daily" data-index="13"
-							 data-title="City Street" data-device="iPhone 16 Pro / 2026.09">
+			<article class="photo p7" data-category="iphone daily" data-index="13" data-title="City Street"
+				data-device="iPhone 16 Pro / 2026.09">
 				<img src="./images/iphone_img11.png" alt="City Street">
 				<div class="photo-meta"><span>Busan, Korea</span><span>iPhone 16 Pro</span></div>
 			</article>
 
-			<article class="photo p7" data-category="iphone daily" data-index="14"
-							 data-title="City Street" data-device="iPhone 16 Pro / 2026.09">
+			<article class="photo p7" data-category="iphone daily" data-index="14" data-title="City Street"
+				data-device="iPhone 16 Pro / 2026.09">
 				<img src="./images/iphone_img12.png" alt="City Street">
 				<div class="photo-meta"><span>Busan, Korea</span><span>iPhone 16 Pro</span></div>
 			</article>
 
-			<article class="photo p7" data-category="iphone daily" data-index="15"
-							 data-title="City Street" data-device="iPhone 16 Pro / 2026.09">
+			<article class="photo p7" data-category="iphone daily" data-index="15" data-title="City Street"
+				data-device="iPhone 16 Pro / 2026.09">
 				<img src="./images/iphone_img13.png" alt="City Street">
 				<div class="photo-meta"><span>Busan, Korea</span><span>iPhone 16 Pro</span></div>
 			</article>
 
-			<article class="photo p7" data-category="iphone daily" data-index="17"
-							 data-title="City Street" data-device="iPhone 16 Pro / 2026.09">
+			<article class="photo p7" data-category="iphone daily" data-index="17" data-title="City Street"
+				data-device="iPhone 16 Pro / 2026.09">
 				<img src="./images/iphone_img14.png" alt="City Street">
 				<div class="photo-meta"><span>Busan, Korea</span><span>iPhone 16 Pro</span></div>
 			</article>
 
-			<article class="photo p7" data-category="iphone daily" data-index="18"
-							 data-title="City Street" data-device="iPhone 16 Pro / 2026.09">
+			<article class="photo p7" data-category="iphone daily" data-index="18" data-title="City Street"
+				data-device="iPhone 16 Pro / 2026.09">
 				<img src="./images/iphone_img15.png" alt="City Street">
 				<div class="photo-meta"><span>Busan, Korea</span><span>iPhone 16 Pro</span></div>
 			</article>
 
-			<article class="photo p7" data-category="iphone daily" data-index="19"
-							 data-title="City Street" data-device="iPhone 16 Pro / 2026.09">
+			<article class="photo p7" data-category="iphone daily" data-index="19" data-title="City Street"
+				data-device="iPhone 16 Pro / 2026.09">
 				<img src="./images/iphone_img16.png" alt="City Street">
 				<div class="photo-meta"><span>Busan, Korea</span><span>iPhone 16 Pro</span></div>
 			</article>
 
-			<article class="photo p3" data-category="camera travel" data-index="20"
-							 data-title="Busan Station" data-device="Nikon Z50ii / 2026.09">
+			<article class="photo p3" data-category="camera travel" data-index="20" data-title="Busan Station"
+				data-device="Nikon Z50ii / 2026.09">
 				<img src="./images/camera_img04.png" alt="Busan Station">
 				<div class="photo-meta"><span>Busan, Korea</span><span>Nikon Z50ii</span></div>
 			</article>
 
-			<article class="photo p3" data-category="camera travel" data-index="21"
-							 data-title="Busan Station" data-device="Nikon Z50ii / 2026.09">
+			<article class="photo p3" data-category="camera travel" data-index="21" data-title="Busan Station"
+				data-device="Nikon Z50ii / 2026.09">
 				<img src="./images/camera_img05.png" alt="Busan Station">
 				<div class="photo-meta"><span>Busan, Korea</span><span>Nikon Z50ii</span></div>
 			</article>
 
-			<article class="photo p7" data-category="iphone travel" data-index="22"
-							 data-title="Busan Station" data-device="iPhone 16 Pro / 2026.09">
+			<article class="photo p7" data-category="iphone travel" data-index="22" data-title="Busan Station"
+				data-device="iPhone 16 Pro / 2026.09">
 				<img src="./images/iphone_img17.png" alt="Busan Station">
 				<div class="photo-meta"><span>Busan, Korea</span><span>iPhone 16 Pro</span></div>
 			</article>
 
-			<article class="photo p3" data-category="camera travel" data-index="23"
-							 data-title="Busan Station" data-device="Nikon Z50ii / 2026.09">
+			<article class="photo p3" data-category="camera travel" data-index="23" data-title="Busan Station"
+				data-device="Nikon Z50ii / 2026.09">
 				<img src="./images/camera_img06.png" alt="Busan Station">
 				<div class="photo-meta"><span>Busan, Korea</span><span>Nikon Z50ii</span></div>
 			</article>
 
-			<article class="photo p7" data-category="iphone travel" data-index="24"
-							 data-title="LOTTE CASTLE De MER" data-device="iPhone 16 Pro / 2026.09">
+			<article class="photo p7" data-category="iphone travel" data-index="24" data-title="LOTTE CASTLE De MER"
+				data-device="iPhone 16 Pro / 2026.09">
 				<img src="./images/iphone_img18.png" alt="LOTTE CASTLE De MER">
 				<div class="photo-meta"><span>Busan, Korea</span><span>iPhone 16 Pro</span></div>
 			</article>
 
-			<article class="photo p3" data-category="camera travel" data-index="25"
-							 data-title="Busan Port SkyDeck" data-device="Nikon Z50ii / 2026.09">
+			<article class="photo p3" data-category="camera travel" data-index="25" data-title="Busan Port SkyDeck"
+				data-device="Nikon Z50ii / 2026.09">
 				<img src="./images/camera_img07.png" alt="Busan Port SkyDeck">
 				<div class="photo-meta"><span>Busan, Korea</span><span>Nikon Z50ii</span></div>
 			</article>
 
-			<article class="photo p7" data-category="iphone travel" data-index="26"
-							 data-title="Busan Port SkyDeck" data-device="iPhone 16 Pro / 2026.09">
+			<article class="photo p7" data-category="iphone travel" data-index="26" data-title="Busan Port SkyDeck"
+				data-device="iPhone 16 Pro / 2026.09">
 				<img src="./images/iphone_img19.png" alt="Busan Port SkyDeck">
 				<div class="photo-meta"><span>Busan, Korea</span><span>iPhone 16 Pro</span></div>
 			</article>
 
 			<article class="photo p3" data-category="camera travel" data-index="27"
-							 data-title="Busan North Port Waterfront Park" data-device="Nikon Z50ii / 2026.09">
+				data-title="Busan North Port Waterfront Park" data-device="Nikon Z50ii / 2026.09">
 				<img src="./images/camera_img08.png" alt="Busan North Port Waterfront Park">
 				<div class="photo-meta"><span>Busan, Korea</span><span>Nikon Z50ii</span></div>
 			</article>
 
 			<article class="photo p3" data-category="camera travel" data-index="28"
-							 data-title="Busan North Port Waterfront Park" data-device="Nikon Z50ii / 2026.09">
+				data-title="Busan North Port Waterfront Park" data-device="Nikon Z50ii / 2026.09">
 				<img src="./images/camera_img09.png" alt="Busan North Port Waterfront Park">
 				<div class="photo-meta"><span>Busan, Korea</span><span>Nikon Z50ii</span></div>
 			</article>
 
 			<article class="photo p7" data-category="iphone travel" data-index="29"
-							 data-title="Busan North Port Waterfront Park" data-device="iPhone 16 Pro / 2026.09">
+				data-title="Busan North Port Waterfront Park" data-device="iPhone 16 Pro / 2026.09">
 				<img src="./images/iphone_img20.png" alt="Busan North Port Waterfront Park">
 				<div class="photo-meta"><span>Busan, Korea</span><span>iPhone 16 Pro</span></div>
 			</article>
 
 			<article class="photo p3" data-category="camera travel" data-index="30"
-							 data-title="Busan North Port Waterfront Park" data-device="Nikon Z50ii / 2026.09">
+				data-title="Busan North Port Waterfront Park" data-device="Nikon Z50ii / 2026.09">
 				<img src="./images/camera_img10.png" alt="Busan North Port Waterfront Park">
 				<div class="photo-meta"><span>Busan, Korea</span><span>Nikon Z50ii</span></div>
 			</article>
 
 			<article class="photo p7" data-category="iphone travel" data-index="31"
-							 data-title="Busan North Port Waterfront Park" data-device="iPhone 16 Pro / 2026.09">
+				data-title="Busan North Port Waterfront Park" data-device="iPhone 16 Pro / 2026.09">
 				<img src="./images/iphone_img21.png" alt="Busan North Port Waterfront Park">
 				<div class="photo-meta"><span>Busan, Korea</span><span>iPhone 16 Pro</span></div>
 			</article>
 
 			<article class="photo p7" data-category="iphone travel" data-index="32"
-							 data-title="Busan North Port Waterfront Park" data-device="iPhone 16 Pro / 2026.09">
+				data-title="Busan North Port Waterfront Park" data-device="iPhone 16 Pro / 2026.09">
 				<img src="./images/iphone_img22.png" alt="Busan North Port Waterfront Park">
 				<div class="photo-meta"><span>Busan, Korea</span><span>iPhone 16 Pro</span></div>
 			</article>
 
 			<article class="photo p3" data-category="camera travel" data-index="33"
-							 data-title="Busan North Port Waterfront Park" data-device="Nikon Z50ii / 2026.09">
+				data-title="Busan North Port Waterfront Park" data-device="Nikon Z50ii / 2026.09">
 				<img src="./images/camera_img11.png" alt="Busan North Port Waterfront Park">
 				<div class="photo-meta"><span>Busan, Korea</span><span>Nikon Z50ii</span></div>
 			</article>
 
 			<article class="photo p3" data-category="camera travel" data-index="34"
-							 data-title="Busan North Port Waterfront Park" data-device="Nikon Z50ii / 2026.09">
+				data-title="Busan North Port Waterfront Park" data-device="Nikon Z50ii / 2026.09">
 				<img src="./images/camera_img13.png" alt="Busan North Port Waterfront Park">
 				<div class="photo-meta"><span>Busan, Korea</span><span>Nikon Z50ii</span></div>
 			</article>
 
 			<article class="photo p7" data-category="iphone travel" data-index="35"
-							 data-title="Busan North Port Waterfront Park" data-device="iPhone 16 Pro / 2026.09">
+				data-title="Busan North Port Waterfront Park" data-device="iPhone 16 Pro / 2026.09">
 				<img src="./images/iphone_img27.png" alt="Busan North Port Waterfront Park">
 				<div class="photo-meta"><span>Busan, Korea</span><span>iPhone 16 Pro</span></div>
 			</article>
 
 			<article class="photo p7" data-category="iphone travel" data-index="36"
-							 data-title="Busan North Port Waterfront Park" data-device="iPhone 16 Pro / 2026.09">
+				data-title="Busan North Port Waterfront Park" data-device="iPhone 16 Pro / 2026.09">
 				<img src="./images/iphone_img28.png" alt="Busan North Port Waterfront Park">
 				<div class="photo-meta"><span>Busan, Korea</span><span>iPhone 16 Pro</span></div>
 			</article>
-			
+
 			<article class="photo p3" data-category="camera travel" data-index="37"
-							 data-title="Busan North Port Waterfront Park" data-device="Nikon Z50ii / 2026.09">
+				data-title="Busan North Port Waterfront Park" data-device="Nikon Z50ii / 2026.09">
 				<img src="./images/camera_img14.png" alt="Busan North Port Waterfront Park">
 				<div class="photo-meta"><span>Busan, Korea</span><span>Nikon Z50ii</span></div>
 			</article>
 
 			<article class="photo p3" data-category="camera travel" data-index="38"
-							 data-title="Busan North Port Waterfront Park" data-device="Nikon Z50ii / 2026.09">
+				data-title="Busan North Port Waterfront Park" data-device="Nikon Z50ii / 2026.09">
 				<img src="./images/camera_img16.png" alt="Busan North Port Waterfront Park">
 				<div class="photo-meta"><span>Busan, Korea</span><span>Nikon Z50ii</span></div>
 			</article>
 
 			<article class="photo p3" data-category="camera travel" data-index="39"
-							 data-title="Busan North Port Waterfront Park" data-device="Nikon Z50ii / 2026.09">
+				data-title="Busan North Port Waterfront Park" data-device="Nikon Z50ii / 2026.09">
 				<img src="./images/camera_img17.png" alt="Busan North Port Waterfront Park">
 				<div class="photo-meta"><span>Busan, Korea</span><span>Nikon Z50ii</span></div>
 			</article>
 
-			<article class="photo p7" data-category="iphone travel" data-index="40"
-							 data-title="Busan North Port Waterfront Park" data-device="iPhone 16 Pro / 2026.09">
+			<article class="photo p7" data-category="iphone daily" data-index="40"
+				data-title="Busan North Port Waterfront Park" data-device="iPhone 16 Pro / 2026.09">
 				<img src="./images/iphone_img30.png" alt="Busan North Port Waterfront Park">
 				<div class="photo-meta"><span>Busan, Korea</span><span>iPhone 16 Pro</span></div>
+			</article>
+
+			<article class="photo p7" data-category="iphone daily" data-index="41"
+				data-title="WORLDMARK CENTUM" data-device="iPhone 16 Pro / 2026.06">
+				<img src="./images/iphone_img31.png" alt="WORLDMARK CENTUM">
+				<div class="photo-meta"><span>Busan, Korea</span><span>iPhone 16 Pro</span></div>
+			</article>
+
+			<article class="photo p7" data-category="iphone daily" data-index="42"
+				data-title="Ulsan Staz Hotel" data-device="iPhone 16 Pro / 2026.06">
+				<img src="./images/iphone_img32.png" alt="Ulsan Staz Hotel">
+				<div class="photo-meta"><span>Ulsan, Korea</span><span>iPhone 16 Pro</span></div>
+			</article>
+
+			<article class="photo p7" data-category="iphone daily" data-index="43"
+				data-title="Narakium Busan On-Tower" data-device="iPhone 16 Pro / 2026.07">
+				<img src="./images/iphone_img33.png" alt="Narakium Busan On-Tower">
+				<div class="photo-meta"><span>Busan, Korea</span><span>iPhone 16 Pro</span></div>
+			</article>
+
+			<article class="photo p7" data-category="iphone daily" data-index="44"
+				data-title="W Moon" data-device="iPhone 16 Pro / 2026.07">
+				<img src="./images/iphone_img34.png" alt="W Moon">
+				<div class="photo-meta"><span>Busan, Korea</span><span>iPhone 16 Pro</span></div>
+			</article>
+
+			<article class="photo p7" data-category="iphone travel" data-index="45"
+				data-title="View in the airplane" data-device="iPhone 16 Pro / 2026.04">
+				<img src="./images/iphone_img35.png" alt="View in the airplane">
+				<div class="photo-meta"><span>Sunset</span><span>iPhone 16 Pro</span></div>
+			</article>
+
+			<article class="photo p7" data-category="iphone travel" data-index="46"
+				data-title="Bangkok Street" data-device="iPhone 16 Pro / 2026.04">
+				<img src="./images/iphone_img36.png" alt="Bangkok Street">
+				<div class="photo-meta"><span>Bangkok, Thailand</span><span>iPhone 16 Pro</span></div>
+			</article>
+
+			<article class="photo p7" data-category="iphone travel" data-index="47"
+				data-title="Bangkok BTS" data-device="iPhone 16 Pro / 2026.04">
+				<img src="./images/iphone_img37.png" alt="Bangkok BTS">
+				<div class="photo-meta"><span>Bangkok, Thailand</span><span>iPhone 16 Pro</span></div>
+			</article>
+
+			<article class="photo p7" data-category="iphone travel" data-index="48"
+				data-title="Bangkok Street Wat Phra Kaew" data-device="iPhone 16 Pro / 2026.04">
+				<img src="./images/iphone_img38.png" alt="Bangkok Street Wat Phra Kaew">
+				<div class="photo-meta"><span>Bangkok, Thailand</span><span>iPhone 16 Pro</span></div>
+			</article>
+
+			<article class="photo p3" data-category="camera travel" data-index="49"
+				data-title="Bangkok Wat Phra Kaew" data-device="Nikon Z50ii / 2026.04">
+				<img src="./images/camera_img18.png" alt="Bangkok Wat Phra Kaew">
+				<div class="photo-meta"><span>Bangkok, Thailand</span><span>Nikon Z50ii</span></div>
+			</article>
+
+			<article class="photo p3" data-category="camera travel" data-index="50"
+				data-title="Bangkok Wat Phra Kaew" data-device="Nikon Z50ii / 2026.04">
+				<img src="./images/camera_img19.png" alt="Bangkok Wat Phra Kaew">
+				<div class="photo-meta"><span>Bangkok, Thailand</span><span>Nikon Z50ii</span></div>
+			</article>
+
+			<article class="photo p3" data-category="camera travel" data-index="51"
+				data-title="Bangkok Wat Phra Kaew" data-device="Nikon Z50ii / 2026.04">
+				<img src="./images/camera_img20.png" alt="Bangkok Wat Phra Kaew">
+				<div class="photo-meta"><span>Bangkok, Thailand</span><span>Nikon Z50ii</span></div>
+			</article>
+
+			<article class="photo p7" data-category="iphone travel" data-index="52"
+				data-title="Bangkok Wat Phra Kaew" data-device="iPhone 16 Pro / 2026.04">
+				<img src="./images/iphone_img39.png" alt="Bangkok Wat Phra Kaew">
+				<div class="photo-meta"><span>Bangkok, Thailand</span><span>iPhone 16 Pro</span></div>
+			</article>
+
+			<article class="photo p7" data-category="iphone travel" data-index="53"
+				data-title="Bangkok Emsphere" data-device="iPhone 16 Pro / 2026.04">
+				<img src="./images/iphone_img40.png" alt="Bangkok Emsphere">
+				<div class="photo-meta"><span>Bangkok, Thailand</span><span>iPhone 16 Pro</span></div>
+			</article>
+
+			<article class="photo p7" data-category="iphone travel" data-index="54"
+				data-title="Bangkok Phrom Phong Karmakamet" data-device="iPhone 16 Pro / 2026.04">
+				<img src="./images/iphone_img41.png" alt="Bangkok Phrom Phong Karmakamet">
+				<div class="photo-meta"><span>Bangkok, Thailand</span><span>iPhone 16 Pro</span></div>
+			</article>
+
+			<article class="photo p7" data-category="iphone travel" data-index="55"
+				data-title="Bangkok Erawan Shrine" data-device="iPhone 16 Pro / 2026.04">
+				<img src="./images/iphone_img42.png" alt="Bangkok Erawan Shrine">
+				<div class="photo-meta"><span>Bangkok, Thailand</span><span>iPhone 16 Pro</span></div>
+			</article>
+
+			<article class="photo p7" data-category="iphone travel" data-index="56"
+				data-title="Bangkok Erawan Shrine Street" data-device="iPhone 16 Pro / 2026.04">
+				<img src="./images/iphone_img43.png" alt="Bangkok Erawan Shrine Street">
+				<div class="photo-meta"><span>Bangkok, Thailand</span><span>iPhone 16 Pro</span></div>
+			</article>
+
+			<article class="photo p7" data-category="iphone travel" data-index="57"
+				data-title="Bangkok OnNut BTS Station" data-device="iPhone 16 Pro / 2026.04">
+				<img src="./images/iphone_img44.png" alt="Bangkok OnNut BTS Station">
+				<div class="photo-meta"><span>Bangkok, Thailand</span><span>iPhone 16 Pro</span></div>
+			</article>
+
+			<article class="photo p7" data-category="iphone travel" data-index="58"
+				data-title="The Quarter OnNut by UHG" data-device="iPhone 16 Pro / 2026.04">
+				<img src="./images/iphone_img45.png" alt="The Quarter OnNut by UHG">
+				<div class="photo-meta"><span>Bangkok, Thailand</span><span>iPhone 16 Pro</span></div>
+			</article>
+
+			<article class="photo p7" data-category="iphone travel" data-index="59"
+				data-title="The Quarter OnNut by UHG" data-device="iPhone 16 Pro / 2026.04">
+				<img src="./images/iphone_img46.png" alt="The Quarter OnNut by UHG">
+				<div class="photo-meta"><span>Bangkok, Thailand</span><span>iPhone 16 Pro</span></div>
 			</article>
 		</div>
 	</main>
@@ -827,7 +1097,9 @@
 				if ($target.length) {
 					e.preventDefault();
 					const headerHeight = $('.header').outerHeight() || 0;
-					$('html, body').stop(true).animate({ scrollTop: Math.max(0, $target.offset().top - headerHeight) }, 750, 'swing');
+					$('html, body').stop(true).animate({
+						scrollTop: Math.max(0, $target.offset().top - headerHeight)
+					}, 750, 'swing');
 				}
 			});
 
@@ -950,14 +1222,36 @@
 			});
 
 			/* =========================
-				 MOBILE MENU
+				MOBILE MENU
 			========================= */
+
 			$('.mobile-menu').on('click', function () {
-				$('.nav').toggleClass('mobile-open');
+				const open = !$('.mobile-nav').hasClass('open');
+				$('.mobile-nav').toggleClass('open', open);
+				$('body').toggleClass('menu-open', open);
+				$('.menu-icon').text(open ? '×' : '☰');
+				$(this)
+					.attr('aria-expanded', open)
+					.attr(
+						'aria-label',
+						open ? 'Close menu' : 'Open menu'
+					);
 			});
 
+
+			/* 메뉴 항목 클릭하면 닫기 */
+
+			$('.mobile-nav a').on('click', function () {
+				$('.mobile-nav').removeClass('open');
+				$('body').removeClass('menu-open');
+				$('.menu-icon').text('☰');
+				$('.mobile-menu')
+					.attr('aria-expanded', 'false')
+					.attr('aria-label', 'Open menu');
+			});
 		});
 	</script>
 
 </body>
+
 </html>
