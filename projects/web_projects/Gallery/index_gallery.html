@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>ITisIT - Photography</title>
+
+	<!-- jQuery -->
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+	<style>
+		:root {
+			--bg: #0b0b0b;
+			--panel: #111111;
+			--text: #f5f5f5;
+			--muted: #8d8d8d;
+			--line: #2a2a2a;
+			--gap: clamp(12px, 1.5vw, 24px);
+		}
+
+		* {
+			box-sizing: border-box;
+			margin: 0;
+			padding: 0;
+		}
+
+		html {
+			scroll-behavior: smooth;
+		}
+
+		body {
+			background: var(--bg);
+			color: var(--text);
+			font-family: Helvetica, Arial, sans-serif;
+			-webkit-font-smoothing: antialiased;
+			overflow-x: hidden;
+		}
+
+		a {
+			color: inherit;
+			text-decoration: none;
+		}
+
+		button {
+			font: inherit;
+			color: inherit;
+		}
+
+		/* =========================
+			 HEADER
+		========================= */
+		.scroll-progress { position: fixed; top:0; left:0; width:0; height:2px; background:#fff; z-index:200; pointer-events:none; }
+
+		.header {
+			width: 100%;
+			padding: 28px 3.2vw;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			position: relative;
+			z-index: 20;
+		}
+
+		.logo {
+			font-size: 13px;
+			font-weight: 700;
+			letter-spacing: 0.08em;
+		}
+
+		.nav {
+			display: flex;
+			align-items: center;
+			gap: clamp(22px, 3vw, 50px);
+			margin-left: auto;
+			margin-right: 50px;
+		}
+
+		.nav a {
+			font-size: 10px;
+			color: #8e8e8e;
+			text-transform: uppercase;
+			transition: color .25s ease;
+		}
+
+		.nav a:hover,
+		.nav a.active {
+			color: #fff;
+		}
+
+		.back-link {
+			font-size: 10px;
+			color: #aaa;
+			white-space: nowrap;
+		}
+
+		.back-link:hover {
+			color: #fff;
+		}
+
+		.mobile-menu {
+			display: none;
+			border: 0;
+			background: transparent;
+			cursor: pointer;
+			font-size: 21px;
+			line-height: 1;
+		}
+
+		/* =========================
+			 HERO
+		========================= */
+		.hero {
+			padding: clamp(50px, 8vw, 130px) 3.2vw 60px;
+			display: grid;
+			grid-template-columns: minmax(0, 1fr) 150px;
+			gap: 50px;
+			align-items: end;
+		}
+
+		.hero-title {
+			font-size: clamp(72px, 10vw, 170px);
+			line-height: .82;
+			letter-spacing: -0.075em;
+			font-weight: 700;
+		}
+
+		.hero-copy {
+			margin-top: 30px;
+			max-width: 460px;
+			color: #999;
+			font-size: 13px;
+			line-height: 1.65;
+		}
+
+		.hero-side {
+			align-self: end;
+		}
+
+		.filter {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 8px;
+		}
+
+		.filter button {
+			position: relative;
+			border: 0;
+			background: transparent;
+			color: #777;
+			padding: 0;
+			cursor: pointer;
+			font-size: 10px;
+			text-transform: uppercase;
+			letter-spacing: .02em;
+			transition: color .25s ease;
+		}
+
+		.filter button::before {
+			content: "";
+			position: absolute;
+			width: 0;
+			height: 1px;
+			left: 0;
+			bottom: -4px;
+			background: #fff;
+			transition: width .25s ease;
+		}
+
+		.filter button:hover,
+		.filter button.active {
+			color: #fff;
+		}
+
+		.filter button.active::before {
+			width: 50px;
+		}
+
+		/* =========================
+			 GALLERY
+		========================= */
+		.gallery-wrap {
+			padding: 0 3.2vw 110px;
+		}
+
+		.gallery {
+			display: grid;
+			grid-template-columns: repeat(12, minmax(0, 1fr));
+			gap: var(--gap);
+			align-items: start;
+		}
+
+		.photo {
+			position: relative;
+			overflow: hidden;
+			cursor: pointer;
+			background: #151515;
+			min-height: 160px;
+		}
+
+		.photo img {
+			width: 100%;
+			height: 100%;
+			min-height: 100%;
+			display: block;
+			object-fit: cover;
+			transition: transform .7s cubic-bezier(.2,.7,.2,1), filter .5s ease;
+		}
+
+		.photo:hover img {
+			transform: scale(1.035);
+			filter: brightness(.82);
+		}
+
+		.photo::after {
+			content: "";
+			position: absolute;
+			inset: 0;
+			background: linear-gradient(to top, rgba(0,0,0,.55), transparent 35%);
+			opacity: 0;
+			transition: opacity .3s ease;
+			pointer-events: none;
+		}
+
+		.photo:hover::after {
+			opacity: 1;
+		}
+
+		.photo-meta {
+			position: absolute;
+			z-index: 2;
+			left: 14px;
+			right: 14px;
+			bottom: 13px;
+			display: flex;
+			justify-content: space-between;
+			gap: 10px;
+			font-size: 9px;
+			color: #fff;
+			text-transform: uppercase;
+			letter-spacing: .03em;
+			opacity: 0;
+			transform: translateY(5px);
+			transition: .3s ease;
+		}
+
+		.photo:hover .photo-meta {
+			opacity: 1;
+			transform: translateY(0);
+		}
+
+		/* Asymmetric editorial layout */
+		.p1 { grid-column: span 5; grid-row: span 2; aspect-ratio: 4 / 5; }
+		.p2 { grid-column: span 3; aspect-ratio: 1 / 1; }
+		.p3 { grid-column: span 4; aspect-ratio: 4 / 3; }
+		.p4 { grid-column: span 4; aspect-ratio: 4 / 3; }
+		.p5 { grid-column: span 3; aspect-ratio: 1 / 1; }
+		.p6 { grid-column: span 5; aspect-ratio: 5 / 3; }
+		.p7 { grid-column: span 3; aspect-ratio: 3 / 4; }
+		.p8 { grid-column: span 4; aspect-ratio: 4 / 3; }
+		.p9 { grid-column: span 5; aspect-ratio: 5 / 4; }
+		.p10 { grid-column: span 3; aspect-ratio: 1 / 1; }
+		.p11 { grid-column: span 4; aspect-ratio: 4 / 5; }
+		.p12 { grid-column: span 5; aspect-ratio: 5 / 3; }
+
+		/* =========================
+			 FOOTER
+		========================= */
+		.footer {
+			border-top: 1px solid var(--line);
+			margin: 0 3.2vw;
+			padding: 55px 0 35px;
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-end;
+			gap: 30px;
+		}
+
+		.footer-title {
+			font-size: clamp(40px, 5vw, 80px);
+			font-weight: 700;
+			letter-spacing: -.06em;
+			line-height: .9;
+		}
+
+		.footer-small {
+			color: #777;
+			font-size: 10px;
+			line-height: 1.7;
+			text-align: right;
+		}
+
+		/* =========================
+			 LIGHTBOX
+		========================= */
+		.lightbox {
+			position: fixed;
+			inset: 0;
+			background: rgba(0,0,0,.94);
+			z-index: 100;
+			display: none;
+			align-items: center;
+			justify-content: center;
+			padding: 50px;
+		}
+
+		.lightbox.open {
+			display: flex;
+		}
+
+		.lightbox-image {
+			max-width: min(90vw, 1500px);
+			max-height: 82vh;
+			object-fit: contain;
+			display: block;
+		}
+
+		.lightbox-close,
+		.lightbox-prev,
+		.lightbox-next {
+			position: fixed;
+			border: 0;
+			background: transparent;
+			cursor: pointer;
+			color: #fff;
+			z-index: 102;
+		}
+
+		.lightbox-close {
+			top: 25px;
+			right: 30px;
+			font-size: 28px;
+			font-weight: 300;
+		}
+
+		.lightbox-prev,
+		.lightbox-next {
+			top: 50%;
+			transform: translateY(-50%);
+			font-size: 35px;
+			padding: 20px;
+			opacity: .75;
+		}
+
+		.lightbox-prev { left: 15px; }
+		.lightbox-next { right: 15px; }
+
+		.lightbox-prev:hover,
+		.lightbox-next:hover {
+			opacity: 1;
+		}
+
+		.lightbox-info {
+			position: fixed;
+			bottom: 25px;
+			left: 30px;
+			right: 30px;
+			display: flex;
+			justify-content: space-between;
+			color: #999;
+			font-size: 10px;
+			text-transform: uppercase;
+			letter-spacing: .04em;
+		}
+
+		/* =========================
+			 RESPONSIVE
+		========================= */
+		@media (max-width: 900px) {
+			.header {
+				padding: 22px 5vw;
+			}
+
+			.nav,
+			.back-link {
+				display: none;
+			}
+
+			.mobile-menu {
+				display: block;
+			}
+
+			.hero {
+				padding: 70px 5vw 45px;
+				display: block;
+			}
+
+			.hero-title {
+				font-size: clamp(62px, 17vw, 125px);
+			}
+
+			.hero-copy {
+				margin-top: 25px;
+			}
+
+			.hero-side {
+				margin-top: 35px;
+			}
+
+			.filter {
+				flex-direction: row;
+				flex-wrap: wrap;
+				gap: 15px 24px;
+			}
+
+			.gallery-wrap {
+				padding: 0 5vw 80px;
+			}
+
+			.gallery {
+				grid-template-columns: repeat(2, minmax(0, 1fr));
+			}
+
+			.photo,
+			.p1, .p2, .p3, .p4, .p5, .p6,
+			.p7, .p8, .p9, .p10, .p11, .p12 {
+				grid-column: span 1;
+				aspect-ratio: 4 / 5;
+			}
+
+			.p1,
+			.p6,
+			.p9,
+			.p12 {
+				grid-column: span 2;
+				aspect-ratio: 16 / 10;
+			}
+
+			.photo-meta {
+				opacity: 1;
+				transform: none;
+			}
+
+			.footer {
+				margin: 0 5vw;
+				padding: 40px 0 30px;
+				display: block;
+			}
+
+			.footer-small {
+				text-align: left;
+				margin-top: 25px;
+			}
+		}
+
+		@media (max-width: 520px) {
+			.hero-title {
+				font-size: 19vw;
+			}
+
+			.hero-copy {
+				font-size: 12px;
+			}
+
+			.gallery {
+				gap: 8px;
+			}
+
+			.photo,
+			.p1, .p2, .p3, .p4, .p5, .p6,
+			.p7, .p8, .p9, .p10, .p11, .p12 {
+				min-height: 0;
+			}
+
+			.photo-meta {
+				left: 9px;
+				right: 9px;
+				bottom: 9px;
+				font-size: 7px;
+			}
+
+			.lightbox {
+				padding: 20px;
+			}
+
+			.lightbox-image {
+				max-width: 96vw;
+				max-height: 75vh;
+			}
+
+			.lightbox-prev,
+			.lightbox-next {
+				font-size: 25px;
+			}
+
+			.lightbox-prev { left: 0; }
+			.lightbox-next { right: 0; }
+
+			.lightbox-info {
+				left: 15px;
+				right: 15px;
+				bottom: 15px;
+				font-size: 8px;
+			}
+		}
+	</style>
+</head>
+
+<body>
+
+	<div class="scroll-progress" aria-hidden="true"></div>
+
+	<!-- HEADER -->
+	<header class="header">
+		<a href="https://itisit.github.io/portfolio" class="logo">ITISIT</a>
+
+		<nav class="nav">
+			<!-- <a href="https://itisit.github.io/portfolio">Home</a> -->
+			<!-- <a href="https://itisit.github.io/portfolio#about">About</a>
+			<a href="https://itisit.github.io/portfolio#projects">Projects</a> -->
+			<a href="#" class="active">Photography</a>
+			<a href="thailand.html">Thailand</a>
+		</nav>
+
+		<a href="https://itisit.github.io/portfolio" class="back-link">Back to Portfolio →</a>
+
+		<button class="mobile-menu" aria-label="Open menu">☰</button>
+	</header>
+
+	<!-- HERO -->
+	<section class="hero">
+		<div>
+			<h1 class="hero-title">Photography</h1>
+			<p class="hero-copy">
+				iPhone & Camera<br>
+				Moments I captured, from everyday life to special trips.
+			</p>
+		</div>
+
+		<aside class="hero-side">
+			<div class="filter" aria-label="Photo categories">
+				<button class="filter-btn active" data-filter="all">All</button>
+				<button class="filter-btn" data-filter="iphone">iPhone</button>
+				<button class="filter-btn" data-filter="camera">Camera</button>
+				<button class="filter-btn" data-filter="travel">Travel</button>
+				<button class="filter-btn" data-filter="daily">Daily</button>
+			</div>
+		</aside>
+	</section>
+
+	<!-- GALLERY -->
+	<main class="gallery-wrap">
+		<div class="gallery">
+
+			<!--
+				사진을 교체하려면 아래 img src만 변경하세요.
+				예: images/photo01.jpg
+			-->
+
+			<article class="photo p6" data-category="iphone travel" data-index="0"
+							 data-title="Daejeon, Korea" data-device="iPhone 16 Pro / 2024.10">
+				<img src="./images/iphone_img01.WEBP" alt="Daejeon Shinsegae Art&Science">
+				<div class="photo-meta"><span>Daejeon, Korea</span><span>iPhone 16 Pro</span></div>
+			</article>
+
+			<article class="photo p4" data-category="iphone travel" data-index="1"
+							 data-title="Bangkok, Thailand" data-device="iPhone 12 Pro / 2024.04">
+				<img src="./images/iphone_img02.WEBP" alt="The Quarter Ari by UHG">
+				<div class="photo-meta"><span>Bangkok, Thailand</span><span>iPhone 12 Pro</span></div>
+			</article>
+
+			<article class="photo p3" data-category="iphone daily" data-index="2"
+							 data-title="Daejeon, Korea" data-device="iPhone 16 Pro / 2025.06">
+				<img src="./images/iphone_img03.WEBP" alt="Daejeon Street">
+				<div class="photo-meta"><span>Daejeon, Korea</span><span>iPhone 16 Pro</span></div>
+			</article>
+
+			<article class="photo p3" data-category="iphone daily" data-index="3"
+							 data-title="Daejeon, Korea" data-device="iPhone 16 Pro / 2025.06">
+				<img src="./images/iphone_img04.WEBP" alt="Daejeon Street">
+				<div class="photo-meta"><span>Daejeon, Korea</span><span>iPhone 16 Pro</span></div>
+			</article>
+
+			<article class="photo p6" data-category="camera daily" data-index="4"
+							 data-title="Keyboard" data-device="Nikon Z50ii / 2025.8">
+				<img src="./images/camera_img01.WEBP" alt="Camera Test">
+				<div class="photo-meta"><span>Keyboard</span><span>Nikon Z50ii</span></div>
+			</article>
+
+			<article class="photo p3" data-category="camera travel" data-index="5"
+							 data-title="Gyeongju, Korea" data-device="Nikon Z50ii / 2025.11">
+				<img src="./images/camera_img02.JPG" alt="Gyeongju Street">
+				<div class="photo-meta"><span>Gyeongju, Korea</span><span>Nikon Z50ii</span></div>
+			</article>
+
+			<article class="photo p7" data-category="iphone daily" data-index="6"
+							 data-title="Street" data-device="iPhone 16 Pro / 2026.07">
+				<img src="./images/iphone_img05.JPG" alt="Just Street">
+				<div class="photo-meta"><span>Busan, Korea</span><span>iPhone 16 Pro</span></div>
+			</article>
+
+			<article class="photo p9" data-category="camera travel" data-index="7"
+							 data-title="Bridge" data-device="Nikon Z50ii / 2026.07">
+				<img src="./images/camera_img03.png" alt="Busan Diamond Bridge">
+				<div class="photo-meta"><span>Busan, Korea</span><span>Nikon Z50ii</span></div>
+			</article>
+
+			<article class="photo p7" data-category="iphone daily" data-index="8"
+							 data-title="City Street" data-device="iPhone 16 Pro / 2026.08">
+				<img src="./images/iphone_img06.png" alt="City Street">
+				<div class="photo-meta"><span>Busan, Korea</span><span>iPhone 16 Pro</span></div>
+			</article>
+
+			<article class="photo p7" data-category="iphone daily" data-index="9"
+							 data-title="Moon" data-device="iPhone 16 Pro / 2026.08">
+				<img src="./images/iphone_img07.png" alt="Moon">
+				<div class="photo-meta"><span>Busan, Korea</span><span>iPhone 16 Pro</span></div>
+			</article>
+
+			<article class="photo p7" data-category="iphone daily" data-index="10"
+							 data-title="City Street" data-device="iPhone 16 Pro / 2026.08">
+				<img src="./images/iphone_img08.png" alt="City Street">
+				<div class="photo-meta"><span>Busan, Korea</span><span>iPhone 16 Pro</span></div>
+			</article>
+
+			<article class="photo p7" data-category="iphone daily" data-index="11"
+							 data-title="City Street" data-device="iPhone 16 Pro / 2026.09">
+				<img src="./images/iphone_img09.png" alt="City Street">
+				<div class="photo-meta"><span>Busan, Korea</span><span>iPhone 16 Pro</span></div>
+			</article>
+
+			<article class="photo p7" data-category="iphone daily" data-index="12"
+							 data-title="City Street" data-device="iPhone 16 Pro / 2026.09">
+				<img src="./images/iphone_img10.png" alt="City Street">
+				<div class="photo-meta"><span>Busan, Korea</span><span>iPhone 16 Pro</span></div>
+			</article>
+
+			<article class="photo p7" data-category="iphone daily" data-index="13"
+							 data-title="City Street" data-device="iPhone 16 Pro / 2026.09">
+				<img src="./images/iphone_img11.png" alt="City Street">
+				<div class="photo-meta"><span>Busan, Korea</span><span>iPhone 16 Pro</span></div>
+			</article>
+
+			<article class="photo p7" data-category="iphone daily" data-index="14"
+							 data-title="City Street" data-device="iPhone 16 Pro / 2026.09">
+				<img src="./images/iphone_img12.png" alt="City Street">
+				<div class="photo-meta"><span>Busan, Korea</span><span>iPhone 16 Pro</span></div>
+			</article>
+
+			<article class="photo p7" data-category="iphone daily" data-index="15"
+							 data-title="City Street" data-device="iPhone 16 Pro / 2026.09">
+				<img src="./images/iphone_img13.png" alt="City Street">
+				<div class="photo-meta"><span>Busan, Korea</span><span>iPhone 16 Pro</span></div>
+			</article>
+
+			<article class="photo p7" data-category="iphone daily" data-index="17"
+							 data-title="City Street" data-device="iPhone 16 Pro / 2026.09">
+				<img src="./images/iphone_img14.png" alt="City Street">
+				<div class="photo-meta"><span>Busan, Korea</span><span>iPhone 16 Pro</span></div>
+			</article>
+
+			<article class="photo p7" data-category="iphone daily" data-index="18"
+							 data-title="City Street" data-device="iPhone 16 Pro / 2026.09">
+				<img src="./images/iphone_img15.png" alt="City Street">
+				<div class="photo-meta"><span>Busan, Korea</span><span>iPhone 16 Pro</span></div>
+			</article>
+
+			<article class="photo p7" data-category="iphone daily" data-index="19"
+							 data-title="City Street" data-device="iPhone 16 Pro / 2026.09">
+				<img src="./images/iphone_img16.png" alt="City Street">
+				<div class="photo-meta"><span>Busan, Korea</span><span>iPhone 16 Pro</span></div>
+			</article>
+
+			<article class="photo p3" data-category="camera travel" data-index="20"
+							 data-title="Busan Station" data-device="Nikon Z50ii / 2026.09">
+				<img src="./images/camera_img04.png" alt="Busan Station">
+				<div class="photo-meta"><span>Busan, Korea</span><span>Nikon Z50ii</span></div>
+			</article>
+
+			<article class="photo p3" data-category="camera travel" data-index="21"
+							 data-title="Busan Station" data-device="Nikon Z50ii / 2026.09">
+				<img src="./images/camera_img05.png" alt="Busan Station">
+				<div class="photo-meta"><span>Busan, Korea</span><span>Nikon Z50ii</span></div>
+			</article>
+
+			<article class="photo p7" data-category="iphone travel" data-index="22"
+							 data-title="Busan Station" data-device="iPhone 16 Pro / 2026.09">
+				<img src="./images/iphone_img17.png" alt="Busan Station">
+				<div class="photo-meta"><span>Busan, Korea</span><span>iPhone 16 Pro</span></div>
+			</article>
+
+			<article class="photo p3" data-category="camera travel" data-index="23"
+							 data-title="Busan Station" data-device="Nikon Z50ii / 2026.09">
+				<img src="./images/camera_img06.png" alt="Busan Station">
+				<div class="photo-meta"><span>Busan, Korea</span><span>Nikon Z50ii</span></div>
+			</article>
+
+			<article class="photo p7" data-category="iphone travel" data-index="24"
+							 data-title="LOTTE CASTLE De MER" data-device="iPhone 16 Pro / 2026.09">
+				<img src="./images/iphone_img18.png" alt="LOTTE CASTLE De MER">
+				<div class="photo-meta"><span>Busan, Korea</span><span>iPhone 16 Pro</span></div>
+			</article>
+
+			<article class="photo p3" data-category="camera travel" data-index="25"
+							 data-title="Busan Port SkyDeck" data-device="Nikon Z50ii / 2026.09">
+				<img src="./images/camera_img07.png" alt="Busan Port SkyDeck">
+				<div class="photo-meta"><span>Busan, Korea</span><span>Nikon Z50ii</span></div>
+			</article>
+
+			<article class="photo p7" data-category="iphone travel" data-index="26"
+							 data-title="Busan Port SkyDeck" data-device="iPhone 16 Pro / 2026.09">
+				<img src="./images/iphone_img19.png" alt="Busan Port SkyDeck">
+				<div class="photo-meta"><span>Busan, Korea</span><span>iPhone 16 Pro</span></div>
+			</article>
+
+			<article class="photo p3" data-category="camera travel" data-index="27"
+							 data-title="Busan North Port Waterfront Park" data-device="Nikon Z50ii / 2026.09">
+				<img src="./images/camera_img08.png" alt="Busan North Port Waterfront Park">
+				<div class="photo-meta"><span>Busan, Korea</span><span>Nikon Z50ii</span></div>
+			</article>
+
+			<article class="photo p3" data-category="camera travel" data-index="28"
+							 data-title="Busan North Port Waterfront Park" data-device="Nikon Z50ii / 2026.09">
+				<img src="./images/camera_img09.png" alt="Busan North Port Waterfront Park">
+				<div class="photo-meta"><span>Busan, Korea</span><span>Nikon Z50ii</span></div>
+			</article>
+
+			<article class="photo p7" data-category="iphone travel" data-index="29"
+							 data-title="Busan North Port Waterfront Park" data-device="iPhone 16 Pro / 2026.09">
+				<img src="./images/iphone_img20.png" alt="Busan North Port Waterfront Park">
+				<div class="photo-meta"><span>Busan, Korea</span><span>iPhone 16 Pro</span></div>
+			</article>
+
+			<article class="photo p3" data-category="camera travel" data-index="30"
+							 data-title="Busan North Port Waterfront Park" data-device="Nikon Z50ii / 2026.09">
+				<img src="./images/camera_img10.png" alt="Busan North Port Waterfront Park">
+				<div class="photo-meta"><span>Busan, Korea</span><span>Nikon Z50ii</span></div>
+			</article>
+
+			<article class="photo p7" data-category="iphone travel" data-index="31"
+							 data-title="Busan North Port Waterfront Park" data-device="iPhone 16 Pro / 2026.09">
+				<img src="./images/iphone_img21.png" alt="Busan North Port Waterfront Park">
+				<div class="photo-meta"><span>Busan, Korea</span><span>iPhone 16 Pro</span></div>
+			</article>
+
+			<article class="photo p7" data-category="iphone travel" data-index="32"
+							 data-title="Busan North Port Waterfront Park" data-device="iPhone 16 Pro / 2026.09">
+				<img src="./images/iphone_img22.png" alt="Busan North Port Waterfront Park">
+				<div class="photo-meta"><span>Busan, Korea</span><span>iPhone 16 Pro</span></div>
+			</article>
+
+			<article class="photo p3" data-category="camera travel" data-index="33"
+							 data-title="Busan North Port Waterfront Park" data-device="Nikon Z50ii / 2026.09">
+				<img src="./images/camera_img11.png" alt="Busan North Port Waterfront Park">
+				<div class="photo-meta"><span>Busan, Korea</span><span>Nikon Z50ii</span></div>
+			</article>
+
+			<article class="photo p3" data-category="camera travel" data-index="34"
+							 data-title="Busan North Port Waterfront Park" data-device="Nikon Z50ii / 2026.09">
+				<img src="./images/camera_img13.png" alt="Busan North Port Waterfront Park">
+				<div class="photo-meta"><span>Busan, Korea</span><span>Nikon Z50ii</span></div>
+			</article>
+
+			<article class="photo p7" data-category="iphone travel" data-index="35"
+							 data-title="Busan North Port Waterfront Park" data-device="iPhone 16 Pro / 2026.09">
+				<img src="./images/iphone_img27.png" alt="Busan North Port Waterfront Park">
+				<div class="photo-meta"><span>Busan, Korea</span><span>iPhone 16 Pro</span></div>
+			</article>
+
+			<article class="photo p7" data-category="iphone travel" data-index="36"
+							 data-title="Busan North Port Waterfront Park" data-device="iPhone 16 Pro / 2026.09">
+				<img src="./images/iphone_img28.png" alt="Busan North Port Waterfront Park">
+				<div class="photo-meta"><span>Busan, Korea</span><span>iPhone 16 Pro</span></div>
+			</article>
+			
+			<article class="photo p3" data-category="camera travel" data-index="37"
+							 data-title="Busan North Port Waterfront Park" data-device="Nikon Z50ii / 2026.09">
+				<img src="./images/camera_img14.png" alt="Busan North Port Waterfront Park">
+				<div class="photo-meta"><span>Busan, Korea</span><span>Nikon Z50ii</span></div>
+			</article>
+
+			<article class="photo p3" data-category="camera travel" data-index="38"
+							 data-title="Busan North Port Waterfront Park" data-device="Nikon Z50ii / 2026.09">
+				<img src="./images/camera_img16.png" alt="Busan North Port Waterfront Park">
+				<div class="photo-meta"><span>Busan, Korea</span><span>Nikon Z50ii</span></div>
+			</article>
+
+			<article class="photo p3" data-category="camera travel" data-index="39"
+							 data-title="Busan North Port Waterfront Park" data-device="Nikon Z50ii / 2026.09">
+				<img src="./images/camera_img17.png" alt="Busan North Port Waterfront Park">
+				<div class="photo-meta"><span>Busan, Korea</span><span>Nikon Z50ii</span></div>
+			</article>
+
+			<article class="photo p7" data-category="iphone travel" data-index="40"
+							 data-title="Busan North Port Waterfront Park" data-device="iPhone 16 Pro / 2026.09">
+				<img src="./images/iphone_img30.png" alt="Busan North Port Waterfront Park">
+				<div class="photo-meta"><span>Busan, Korea</span><span>iPhone 16 Pro</span></div>
+			</article>
+		</div>
+	</main>
+
+	<!-- FOOTER -->
+	<footer class="footer">
+		<div class="footer-title">Capture<br>The Moments.</div>
+		<div class="footer-small">
+			Photography Portfolio<br>
+			ITISIT © 2026
+		</div>
+	</footer>
+
+	<!-- LIGHTBOX -->
+	<div class="lightbox" aria-hidden="true">
+		<button class="lightbox-close" aria-label="Close">×</button>
+		<button class="lightbox-prev" aria-label="Previous">‹</button>
+		<img class="lightbox-image" src="" alt="">
+		<button class="lightbox-next" aria-label="Next">›</button>
+
+		<div class="lightbox-info">
+			<span class="lightbox-title"></span>
+			<span class="lightbox-device"></span>
+		</div>
+	</div>
+
+	<script>
+		$(function () {
+
+			/* =========================
+				 SMOOTH SCROLL
+			========================= */
+			$('a[href*="#"]').on('click', function (e) {
+				const href = $(this).attr('href');
+				if (!href || href === '#') return;
+				const hashIndex = href.indexOf('#');
+				if (hashIndex === -1) return;
+				const targetId = href.substring(hashIndex);
+				const $target = $(targetId);
+				if ($target.length) {
+					e.preventDefault();
+					const headerHeight = $('.header').outerHeight() || 0;
+					$('html, body').stop(true).animate({ scrollTop: Math.max(0, $target.offset().top - headerHeight) }, 750, 'swing');
+				}
+			});
+
+			function updateScrollProgress() {
+				const maxScroll = $(document).height() - $(window).height();
+				const progress = maxScroll > 0 ? ($(window).scrollTop() / maxScroll) * 100 : 0;
+				$('.scroll-progress').css('width', progress + '%');
+			}
+			$(window).on('scroll', updateScrollProgress);
+			updateScrollProgress();
+
+			/* =========================
+				 FILTER
+			========================= */
+			$('.filter-btn').on('click', function () {
+				const filter = $(this).data('filter');
+
+				$('.filter-btn').removeClass('active');
+				$(this).addClass('active');
+
+				$('.photo').each(function () {
+					const categories = $(this).data('category').split(' ');
+
+					if (filter === 'all' || categories.includes(filter)) {
+						$(this).stop(true, true).fadeIn(250);
+					} else {
+						$(this).stop(true, true).fadeOut(180);
+					}
+				});
+			});
+
+			/* =========================
+				 LIGHTBOX
+			========================= */
+			let currentIndex = 0;
+			let visiblePhotos = [];
+
+			function refreshVisiblePhotos() {
+				visiblePhotos = $('.photo:visible').toArray();
+			}
+
+			function openLightbox(photo) {
+				refreshVisiblePhotos();
+
+				currentIndex = visiblePhotos.indexOf(photo);
+
+				if (currentIndex < 0) {
+					currentIndex = 0;
+				}
+
+				showLightboxImage();
+				$('.lightbox').addClass('open').attr('aria-hidden', 'false');
+				$('body').css('overflow', 'hidden');
+			}
+
+			function showLightboxImage() {
+				const photo = visiblePhotos[currentIndex];
+
+				if (!photo) return;
+
+				const $photo = $(photo);
+				const src = $photo.find('img').attr('src');
+				const title = $photo.data('title');
+				const device = $photo.data('device');
+
+				$('.lightbox-image')
+					.attr('src', src)
+					.attr('alt', title);
+
+				$('.lightbox-title').text(title);
+				$('.lightbox-device').text(device);
+			}
+
+			function closeLightbox() {
+				$('.lightbox').removeClass('open').attr('aria-hidden', 'true');
+				$('body').css('overflow', '');
+			}
+
+			function nextImage() {
+				refreshVisiblePhotos();
+
+				if (!visiblePhotos.length) return;
+
+				currentIndex = (currentIndex + 1) % visiblePhotos.length;
+				showLightboxImage();
+			}
+
+			function prevImage() {
+				refreshVisiblePhotos();
+
+				if (!visiblePhotos.length) return;
+
+				currentIndex =
+					(currentIndex - 1 + visiblePhotos.length) %
+					visiblePhotos.length;
+
+				showLightboxImage();
+			}
+
+			$('.photo').on('click', function () {
+				openLightbox(this);
+			});
+
+			$('.lightbox-close').on('click', closeLightbox);
+			$('.lightbox-next').on('click', nextImage);
+			$('.lightbox-prev').on('click', prevImage);
+
+			$('.lightbox').on('click', function (e) {
+				if ($(e.target).hasClass('lightbox')) {
+					closeLightbox();
+				}
+			});
+
+			$(document).on('keydown', function (e) {
+				if (!$('.lightbox').hasClass('open')) return;
+
+				if (e.key === 'Escape') closeLightbox();
+				if (e.key === 'ArrowRight') nextImage();
+				if (e.key === 'ArrowLeft') prevImage();
+			});
+
+			/* =========================
+				 MOBILE MENU
+			========================= */
+			$('.mobile-menu').on('click', function () {
+				$('.nav').toggleClass('mobile-open');
+			});
+
+		});
+	</script>
+
+</body>
+</html>
